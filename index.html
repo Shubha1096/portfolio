@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shubham Khandelwal — [Your Professional Title]</title>
-<meta name="description" content="Portfolio of Shubham Khandelwal — [your professional title].">
+<title>Shubham Khandelwal — Product Manager</title>
+<meta name="description" content="Portfolio of Shubham Khandelwal — engineer turned product manager.">
+<!-- NOTE: All names, numbers, companies and dates below are DUMMY data. Replace with your real details. -->
 <style>
   :root{
     --bg:#f6f7fb; --surface:#ffffff; --surface2:#eef0f6; --text:#161a23; --muted:#5b6475;
@@ -73,7 +74,18 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
   .chip{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:4px 10px;font-size:.78rem;font-weight:600;color:var(--text)}
 
-  .big{font-size:1.6rem;font-weight:800;color:var(--accent);display:block;margin-bottom:4px}
+  /* Journey timeline */
+  .journey{position:relative;display:grid;gap:34px;padding-left:44px}
+  .journey::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--accent),var(--accent2))}
+  .step{position:relative}
+  .step .dot{position:absolute;left:-44px;top:4px;width:32px;height:32px;border-radius:50%;background:var(--surface);border:3px solid var(--accent);display:grid;place-items:center;font-size:.85rem;font-weight:800;color:var(--accent)}
+  .step.pm .dot{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
+  .stage{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px}
+  .step .when{color:var(--muted);font-size:.85rem;font-weight:600}
+  .step ul{margin:12px 0 0 18px;color:var(--muted)}
+  .step li{margin-bottom:6px}
+  .win{margin-top:14px;padding:12px 16px;border-radius:12px;background:var(--surface2);border-left:4px solid var(--accent);font-size:.92rem}
+  .win b{color:var(--accent)}
 
   .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
   @media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
@@ -84,14 +96,6 @@
   input,textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font:inherit;margin-top:6px}
   input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
   textarea{min-height:130px;resize:vertical}
-
-  /* Insights drawer */
-  #drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--surface);border-left:1px solid var(--border);box-shadow:-12px 0 40px rgba(0,0,0,.08);transform:translateX(100%);transition:.3s;z-index:60;overflow:auto;padding:28px}
-  #drawer.open{transform:none}
-  #drawer h3{margin-bottom:6px}
-  #drawer .post{border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:14px;background:var(--bg)}
-  #drawer .post p{color:var(--muted);font-size:.9rem;margin:4px 0 8px}
-  #close{float:right}
 
   footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:.88rem;text-align:center}
   #top{position:fixed;right:20px;bottom:20px;opacity:0;pointer-events:none;transition:.2s}
@@ -111,8 +115,7 @@
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#beyond">Beyond</a>
-      <a href="#" id="insights-link">Insights ↗</a>
+      <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="icon-btn" id="menu" aria-label="Menu">☰</button>
@@ -122,26 +125,26 @@
 <header class="hero" id="home">
   <div class="wrap">
     <div class="badges">
-      <span class="badge">💼 [X]+ yrs · [Your field]</span>
-      <span class="badge">🎓 [Your degree / institute]</span>
+      <span class="badge">💼 6+ yrs · Engineering → Product</span>
+      <span class="badge">🎓 B.Tech CSE · Sample Institute of Technology</span>
     </div>
     <div class="hero-grid">
       <div>
         <h1>Hi, I'm <span>Shubham Khandelwal</span></h1>
-        <p class="tagline">[Your professional title — e.g. Analytics Consultant · Software Engineer]</p>
-        <p class="lead">[Two or three sentences: what you do, the kind of systems or products you build, the industries or clients you've worked with, and what you're doing now. Replace with your own summary.]</p>
+        <p class="tagline">Product Manager — Platform &amp; Customer Experience</p>
+        <p class="lead">I started as a fresher in a company ILP, grew into a software engineer who shipped to millions of users, and moved into product management to own the "what" and "why" as well as the "how". I now lead roadmaps for B2B platforms, turning messy problems into products customers actually use.</p>
         <div class="cta">
           <a class="btn primary" href="#contact">Get in touch</a>
-          <a class="btn" href="#projects">See my work</a>
+          <a class="btn" href="#journey">See my journey</a>
         </div>
       </div>
       <div class="avatar" aria-hidden="true">SK</div>
     </div>
     <div class="stats">
-      <div class="stat"><b>[X]+</b><span>Years of experience</span></div>
-      <div class="stat"><b>[XX]</b><span>Projects delivered</span></div>
-      <div class="stat"><b>[X]</b><span>Companies / clients</span></div>
-      <div class="stat"><b>[XX%]</b><span>Headline result</span></div>
+      <div class="stat"><b>6+</b><span>Years of experience</span></div>
+      <div class="stat"><b>12</b><span>Products &amp; features launched</span></div>
+      <div class="stat"><b>3</b><span>Companies / roles</span></div>
+      <div class="stat"><b>+34%</b><span>Activation lift on flagship product</span></div>
     </div>
   </div>
 </header>
@@ -152,14 +155,14 @@
     <p class="sec-sub">Where I studied and what I focused on.</p>
     <div class="grid2">
       <div class="card">
-        <h3>[Postgraduate programme, if any]</h3>
-        <p class="meta">[Institute] · [Start] – [End / expected]</p>
-        <p>[Short note: specialisation, status, or honours.]</p>
+        <h3>Product Management Certification</h3>
+        <p class="meta">Sample Product School · 2022 – 2023</p>
+        <p>Part-time programme on discovery, roadmapping, metrics and stakeholder management. Capstone: redesigned an onboarding funnel for a fintech app.</p>
       </div>
       <div class="card">
-        <h3>[Bachelor's degree]</h3>
-        <p class="meta">[Institute] · [Start] – [End]</p>
-        <p>[CGPA, rank, scholarship, or relevant coursework.]</p>
+        <h3>B.Tech, Computer Science &amp; Engineering</h3>
+        <p class="meta">Sample Institute of Technology · 2016 – 2020</p>
+        <p>CGPA 8.4 / 10 · Dean's list two semesters · Won the college coding contest in third year.</p>
       </div>
     </div>
   </div>
@@ -168,48 +171,43 @@
 <section id="experience">
   <div class="wrap reveal">
     <div class="sec-head"><span class="num">02</span><h2>Experience</h2></div>
-    <p class="sec-sub">[X]+ years across [N] different environments. One sentence on how each shaped how you work.</p>
+    <p class="sec-sub">6+ years across a large IT services firm, a product startup and a scale-up. Each taught me a different way of building.</p>
     <div class="timeline">
 
       <div class="tl-item card">
-        <span class="date">[Mon YYYY] – Present</span>
-        <h3>[Job title] — [Headline project]</h3>
-        <p class="meta">[Company] · [City, Country]</p>
+        <span class="date">Apr 2024 – Present</span>
+        <h3>Product Manager — Merchant Platform</h3>
+        <p class="meta">Sample Scale-up Pvt. Ltd. · Bengaluru, India</p>
         <ul>
-          <li>[Scoped / built / led X, delivering Y within Z time.]</li>
-          <li>[Sized or saved $/₹ amount, or improved a metric by N%.]</li>
-          <li>[Built a model, pipeline or dashboard that business teams now use for…]</li>
+          <li>Own the roadmap for a merchant onboarding and payments dashboard used by 40,000+ merchants.</li>
+          <li>Ran 25+ customer interviews and A/B tests, lifting onboarding activation by 34% in two quarters.</li>
+          <li>Partner with a team of 12 engineers and designers; shipped 8 releases on a fortnightly cadence.</li>
         </ul>
-        <div class="chips"><span class="chip">[Metric 1]</span><span class="chip">[Metric 2]</span><span class="chip">[Metric 3]</span></div>
+        <div class="chips"><span class="chip">+34% activation</span><span class="chip">40K+ merchants</span><span class="chip">8 releases</span></div>
       </div>
 
       <div class="tl-item card">
-        <span class="date">[Mon YYYY] – [Mon YYYY]</span>
-        <h3>[Job title] — [Client / programme]</h3>
-        <p class="meta">[Company] · [City, Country]</p>
-        <h4>[Client A] — [Product or solution]</h4>
+        <span class="date">Jul 2022 – Mar 2024</span>
+        <h3>Associate Product Manager → Product Manager</h3>
+        <p class="meta">Sample Startup Technologies · Pune, India</p>
         <ul>
-          <li>[What you owned end-to-end and the scale: users, records, spend.]</li>
-          <li>[What you led: team size, workshops, roadmap.]</li>
+          <li>Moved from engineering into product on the same team; defined requirements for a subscription billing module.</li>
+          <li>Cut support tickets by 22% by redesigning the invoice and refund flows after analysing ticket data.</li>
+          <li>Introduced OKRs and a weekly metrics review that the whole product group adopted.</li>
         </ul>
-        <h4>[Client B] — [Product or solution]</h4>
-        <ul>
-          <li>[Outcome with a number.]</li>
-          <li>[Technical detail: tools, architecture.]</li>
-        </ul>
-        <div class="chips"><span class="chip">[Metric 1]</span><span class="chip">[Metric 2]</span><span class="chip">[Metric 3]</span></div>
+        <div class="chips"><span class="chip">-22% tickets</span><span class="chip">Billing module</span><span class="chip">OKR rollout</span></div>
       </div>
 
       <div class="tl-item card">
-        <span class="date">[Mon YYYY] – [Mon YYYY]</span>
-        <h3>[Job title] — [Transformation / optimisation]</h3>
-        <p class="meta">[Company] · [City, Country]</p>
+        <span class="date">Aug 2020 – Jun 2022</span>
+        <h3>Software Engineer</h3>
+        <p class="meta">Sample IT Services Ltd. · Pune, India</p>
         <ul>
-          <li>[Led implementation of X across N sites / teams / customers.]</li>
-          <li>[Built a framework covering N items, improving Y to Z.]</li>
-          <li>[Reduced waste / cost / time by N%.]</li>
+          <li>Built backend services in Java and Spring Boot for a retail banking client, handling 1M+ requests a day.</li>
+          <li>Automated deployments with CI/CD, reducing release time from 3 hours to 25 minutes.</li>
+          <li>Won the quarterly Spot Award for resolving a critical production incident within 2 hours.</li>
         </ul>
-        <div class="chips"><span class="chip">[Metric 1]</span><span class="chip">[Metric 2]</span></div>
+        <div class="chips"><span class="chip">1M+ req/day</span><span class="chip">Release time -86%</span><span class="chip">Spot Award</span></div>
       </div>
 
     </div>
@@ -218,47 +216,117 @@
 
 <section id="projects">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">03</span><h2>Product build</h2></div>
-    <p class="sec-sub">Work I built outside my day job — hackathons, side projects and teardowns.</p>
+    <div class="sec-head"><span class="num">03</span><h2>Projects</h2></div>
+    <p class="sec-sub">Product work I've shipped or built on the side.</p>
     <div class="grid2">
       <div class="card">
-        <span class="chip">[Hackathon / Side project]</span>
-        <h3 style="margin-top:12px">[Project name]</h3>
-        <p class="meta">[Tech or tools used]</p>
-        <p>[Who it's for, the problem it solves, how it works, and the outcome.]</p>
-        <div class="chips"><span class="chip">[Tag]</span><span class="chip">[Tag]</span><span class="chip">[Tag]</span></div>
-        <p style="margin-top:14px"><a href="#">🎥 Watch the demo →</a></p>
+        <span class="chip">Flagship · Work</span>
+        <h3 style="margin-top:12px">Merchant Onboarding Revamp</h3>
+        <p class="meta">Funnel analytics · A/B testing · Figma · SQL</p>
+        <p>Rebuilt a 9-step KYC and setup flow into 4 steps with progress saving. Activation rose from 41% to 55% and time-to-first-payment dropped by 3 days.</p>
+        <div class="chips"><span class="chip">Discovery</span><span class="chip">Experimentation</span><span class="chip">Growth</span></div>
+        <p style="margin-top:14px"><a href="#">Read the case study →</a></p>
       </div>
       <div class="card">
-        <span class="chip">[Teardown / Case study]</span>
-        <h3 style="margin-top:12px">[Project name]</h3>
-        <p class="meta">[Tech or tools used]</p>
-        <p>[What you analysed or redesigned and why it matters.]</p>
-        <div class="chips"><span class="chip">[Tag]</span><span class="chip">[Tag]</span></div>
-        <p style="margin-top:14px"><a href="#">🔗 Try the prototype →</a></p>
+        <span class="chip">Side project</span>
+        <h3 style="margin-top:12px">Expense Splitter App</h3>
+        <p class="meta">React · Node.js · PostgreSQL</p>
+        <p>A simple app to split trip and flat expenses with friends, with UPI deep links for settling up. Used by 300+ people in its first month.</p>
+        <div class="chips"><span class="chip">0 → 1</span><span class="chip">300+ users</span></div>
+        <p style="margin-top:14px"><a href="#">View on GitHub →</a></p>
+      </div>
+      <div class="card">
+        <span class="chip">Hackathon</span>
+        <h3 style="margin-top:12px">Support Ticket Triage Assistant</h3>
+        <p class="meta">Python · LLM APIs · Dashboard</p>
+        <p>A prototype that tags and routes incoming support tickets automatically. Finished in the top 5 of 40 teams at an internal hackathon.</p>
+        <div class="chips"><span class="chip">Top 5 / 40</span><span class="chip">AI prototype</span></div>
+        <p style="margin-top:14px"><a href="#">Watch the demo →</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="beyond">
+<section id="journey">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">04</span><h2>Beyond work</h2></div>
-    <p class="sec-sub">Recognition, writing, community and mentoring.</p>
+    <div class="sec-head"><span class="num">04</span><h2>My journey</h2></div>
+    <p class="sec-sub">From a fresher in the company ILP to a product manager owning a roadmap, and what I achieved at every stage.</p>
 
-    <h3 style="margin-bottom:14px">Recognitions</h3>
-    <div class="grid2">
-      <div class="card"><span class="big">[Number / Prize]</span><p>[Hackathon, award or competition you won, and what for.]</p></div>
-      <div class="card"><span class="big">[Number]</span><p>[Book, publication or paper — title, and any ratings or reach.]</p></div>
-      <div class="card"><span class="big">[Number] views</span><p>[Content you create (LinkedIn, blog, YouTube) and your audience size.]</p></div>
-      <div class="card"><span class="big">[Award name]</span><p>[Company or institute award and the achievement behind it.]</p></div>
-    </div>
+    <div class="journey">
 
-    <h3 style="margin:36px 0 14px">Leadership &amp; community</h3>
-    <div class="grid2">
-      <div class="card"><h3>[Club / community] — [Role]</h3><p class="meta">[Dates]</p><p>[What you led and the results: members, events, awards.]</p></div>
-      <div class="card"><h3>[Initiative] — [Role]</h3><p class="meta">[Dates]</p><p>[What you built from scratch and how it grew.]</p></div>
-      <div class="card"><h3>Mentoring</h3><p class="meta">[Platform] · since [Year]</p><p>[Number of people mentored, topics, ratings and testimonials.]</p></div>
+      <div class="step">
+        <div class="dot">1</div>
+        <span class="stage">Stage 1 · Learn</span>
+        <h3>Joined the Initial Learning Program (ILP)</h3>
+        <span class="when">Aug 2020 – Nov 2020 · Pune</span>
+        <ul>
+          <li>Completed a 3-month immersive programme on Java, SQL, data structures and agile delivery.</li>
+          <li>Built a mini inventory system as the team project and presented it to the ILP panel.</li>
+        </ul>
+        <div class="win"><b>Achievement:</b> Finished in the top 5% of a batch of 400 and was picked for a banking client project.</div>
+      </div>
+
+      <div class="step">
+        <div class="dot">2</div>
+        <span class="stage">Stage 2 · Build</span>
+        <h3>Software Engineer on a banking project</h3>
+        <span class="when">Dec 2020 – Jun 2021</span>
+        <ul>
+          <li>Shipped my first production features and fixed 60+ defects while learning the codebase.</li>
+          <li>Picked up deployment and monitoring work, which first showed me how releases affect customers.</li>
+        </ul>
+        <div class="win"><b>Achievement:</b> Resolved a critical production incident in 2 hours and earned the quarterly Spot Award.</div>
+      </div>
+
+      <div class="step">
+        <div class="dot">3</div>
+        <span class="stage">Stage 3 · Own</span>
+        <h3>Module owner and automation lead</h3>
+        <span class="when">Jul 2021 – Jun 2022</span>
+        <ul>
+          <li>Took ownership of the payments module and mentored 4 new joiners from the next ILP batch.</li>
+          <li>Led CI/CD automation that cut release time from 3 hours to 25 minutes.</li>
+        </ul>
+        <div class="win"><b>Achievement:</b> Promoted ahead of cycle to technical lead of a 6-member squad.</div>
+      </div>
+
+      <div class="step">
+        <div class="dot">4</div>
+        <span class="stage">Stage 4 · Pivot</span>
+        <h3>The transition: engineer to product</h3>
+        <span class="when">2022</span>
+        <ul>
+          <li>Started asking "why are we building this?" and began sitting in on customer calls and roadmap reviews.</li>
+          <li>Took a product management certification at night, wrote PRDs for side initiatives and shadowed a senior PM.</li>
+          <li>Moved to a product startup as an Associate Product Manager.</li>
+        </ul>
+        <div class="win"><b>Achievement:</b> Landed an APM role by showing a shipped feature, a PRD portfolio and 2 case studies.</div>
+      </div>
+
+      <div class="step">
+        <div class="dot">5</div>
+        <span class="stage">Stage 5 · Ship</span>
+        <h3>Associate PM, then Product Manager</h3>
+        <span class="when">Jul 2022 – Mar 2024 · Pune</span>
+        <ul>
+          <li>Defined and launched a subscription billing module end-to-end with engineering and design.</li>
+          <li>Used ticket and funnel data to redesign invoice and refund flows.</li>
+        </ul>
+        <div class="win"><b>Achievement:</b> Cut support tickets by 22% and was promoted to Product Manager in 18 months.</div>
+      </div>
+
+      <div class="step pm">
+        <div class="dot">★</div>
+        <span class="stage">Stage 6 · Lead</span>
+        <h3>Product Manager, Merchant Platform</h3>
+        <span class="when">Apr 2024 – Present · Bengaluru</span>
+        <ul>
+          <li>Own the roadmap, metrics and stakeholder alignment for a platform serving 40,000+ merchants.</li>
+          <li>Run discovery, experiments and fortnightly releases with a 12-person cross-functional team.</li>
+        </ul>
+        <div class="win"><b>Achievement:</b> Lifted onboarding activation by 34% and now mentor aspiring PMs from engineering backgrounds.</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -266,7 +334,7 @@
 <section id="contact">
   <div class="wrap reveal">
     <div class="sec-head"><span class="num">05</span><h2>Get in touch</h2></div>
-    <p class="sec-sub">[One line about what you're open to — roles, collaborations, mentoring, conversations.]</p>
+    <p class="sec-sub">Open to product conversations, mentoring engineers who want to move into PM, and collaborations.</p>
     <div class="contact-grid">
       <div class="card">
         <h3>Find me online</h3>
@@ -274,7 +342,6 @@
           <a href="mailto:your-email@example.com">✉ your-email@example.com</a>
           <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">🔗 linkedin.com/in/your-profile</a>
           <a href="https://github.com/Shubha1096" target="_blank" rel="noopener">💻 github.com/Shubha1096</a>
-          <a href="#" target="_blank" rel="noopener">📅 Book a call</a>
         </div>
       </div>
       <div class="card">
@@ -290,15 +357,6 @@
   </div>
 </section>
 
-<aside id="drawer" aria-label="Business insights">
-  <button class="icon-btn" id="close" aria-label="Close">✕</button>
-  <h3>Business Insights</h3>
-  <p class="meta">A few notes from LinkedIn — thinking through [your topics] in public.</p>
-  <div class="post"><b>[Post title 1]</b><p>[One-line summary of the post.]</p><a href="#" target="_blank" rel="noopener">View on LinkedIn ↗</a></div>
-  <div class="post"><b>[Post title 2]</b><p>[One-line summary of the post.]</p><a href="#" target="_blank" rel="noopener">View on LinkedIn ↗</a></div>
-  <div class="post"><b>[Post title 3]</b><p>[One-line summary of the post.]</p><a href="#" target="_blank" rel="noopener">View on LinkedIn ↗</a></div>
-</aside>
-
 <footer>© <span id="yr"></span> Shubham Khandelwal. Built with HTML, CSS &amp; a little JavaScript.</footer>
 <a id="top" class="btn" href="#home" aria-label="Back to top">↑</a>
 
@@ -306,11 +364,6 @@
   const links=document.getElementById('links');
   document.getElementById('menu').onclick=()=>links.classList.toggle('open');
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-
-  const drawer=document.getElementById('drawer');
-  document.getElementById('insights-link').addEventListener('click',e=>{e.preventDefault();drawer.classList.add('open');});
-  document.getElementById('close').onclick=()=>drawer.classList.remove('open');
-  addEventListener('keydown',e=>{if(e.key==='Escape')drawer.classList.remove('open');});
 
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
