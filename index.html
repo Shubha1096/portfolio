@@ -404,9 +404,9 @@
 
   const secs=[...document.querySelectorAll('section[id]')];
   const navLinks=[...links.querySelectorAll('a')];
-  const top=document.getElementById('top');
+  const topBtn=document.getElementById('top');
   addEventListener('scroll',()=>{
-    top.classList.toggle('show',scrollY>600);
+    topBtn.classList.toggle('show',scrollY>600);
     let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id;});
     navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
   });
