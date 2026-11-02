@@ -106,6 +106,12 @@
   .now{margin:0 0 18px;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:.92rem;color:var(--muted);display:inline-block}
   .now b{color:var(--text)}
   .badge.open{border-color:var(--accent);color:var(--accent);font-weight:600}
+  .pm-title{font-size:1.15rem;margin:36px 0 14px}
+  .pm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .pm-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;transition:.2s}
+  .pm-card:hover{border-color:var(--accent)}
+  .pm-card h3{font-size:.98rem;margin-bottom:4px}
+  .pm-card p{color:var(--muted);font-size:.88rem;line-height:1.5}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -149,10 +155,20 @@
       <div class="avatar" aria-hidden="true">SK</div>
     </div>
     <div class="stats">
-      <div class="stat"><b>8+</b><span>Years of experience</span></div>
-      <div class="stat"><b>6+</b><span>Years onsite in Japan</span></div>
+      <div class="stat"><b>6+</b><span>Years delivering onsite from Tokyo, working side by side with the business</span></div>
       <div class="stat"><b>40+</b><span>Microservice APIs designed</span></div>
       <div class="stat"><b>+20%</b><span>Online bookings in year one</span></div>
+      <div class="stat"><b>12</b><span>Production releases shipped on schedule</span></div>
+    </div>
+
+    <h2 class="pm-title">PM competencies, backed by evidence</h2>
+    <div class="pm-grid">
+      <div class="pm-card"><h3>🔍 Discovery</h3><p>Ran workshops with 10+ stakeholders and turned them into BRDs, user stories and wireframes.</p></div>
+      <div class="pm-card"><h3>🎯 Prioritisation</h3><p>Ranked features by business value vs delivery effort for the booking and post-booking platform.</p></div>
+      <div class="pm-card"><h3>🚀 Delivery</h3><p>35+ sprints, 12 on-time releases, ~80% sprint completion across dev and QA teams.</p></div>
+      <div class="pm-card"><h3>🧩 Platform thinking</h3><p>Reusable REST/SOAP contracts across 40+ microservices drove 20% API reuse.</p></div>
+      <div class="pm-card"><h3>📈 Outcomes &amp; metrics</h3><p>+20% bookings, ~70% fewer downtime incidents, 60% faster patch cycles.</p></div>
+      <div class="pm-card"><h3>🤝 Leadership</h3><p>Led a 10-member team, and a CI/CD migration aligning 5+ teams on one roadmap.</p></div>
     </div>
   </div>
 </header>
