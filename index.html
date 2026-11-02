@@ -31,7 +31,7 @@
     .links.open{display:flex}
   }
 
-  .hero{padding:96px 0 72px}
+  .hero{padding:48px 0 40px}
   .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
   .badge{background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:999px;font-size:.82rem;color:var(--muted)}
   .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
@@ -47,12 +47,12 @@
   .avatar{aspect-ratio:1;border-radius:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-size:4.5rem;font-weight:800;color:#fff;max-width:320px;margin-left:auto;width:100%}
   @media(max-width:820px){.avatar{margin:0;max-width:200px}}
 
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:56px}
-  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:32px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px}
   .stat b{display:block;font-size:1.9rem;font-weight:800;color:var(--accent)}
   .stat span{color:var(--muted);font-size:.88rem}
 
-  section{padding:72px 0}
+  section{padding:56px 0}
   .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
   .num{color:var(--accent);font-weight:700;font-size:.95rem;font-variant-numeric:tabular-nums}
   h2{font-size:clamp(1.6rem,3.5vw,2.1rem);letter-spacing:-.01em}
@@ -100,10 +100,14 @@
   #top{position:fixed;right:20px;bottom:20px;opacity:0;pointer-events:none;transition:.2s}
   #top.show{opacity:1;pointer-events:auto}
 
-  .reveal{opacity:0;transform:translateY(18px);transition:.6s}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  .js .reveal{opacity:0;transform:translateY(18px);transition:.6s}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  .now{margin:0 0 18px;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:.92rem;color:var(--muted);display:inline-block}
+  .now b{color:var(--text)}
+  .badge.open{border-color:var(--accent);color:var(--accent);font-weight:600}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -111,12 +115,12 @@
   <div class="wrap">
     <a class="logo" href="#home">SHUBHAM KHANDELWAL</a>
     <div class="links" id="links">
-      <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
       <a href="#journey">Journey</a>
-      <a href="#contact">Contact</a>
+      <a class="btn primary" style="padding:8px 16px;color:#fff" href="#contact">Contact</a>
     </div>
     <button class="icon-btn" id="menu" aria-label="Menu">☰</button>
   </div>
@@ -125,19 +129,21 @@
 <header class="hero" id="home">
   <div class="wrap">
     <div class="badges">
-      <span class="badge">💼 8+ yrs · Airline &amp; Fintech Technology</span>
+      <span class="badge open">🟢 Open to product roles</span>
+      <span class="badge">💼 8+ yrs · Airline &amp; Fintech Tech</span>
       <span class="badge">🇯🇵 6+ yrs onsite in Japan</span>
-      <span class="badge">🎓 B.E. Mechanical · North Maharashtra University</span>
-      <span class="badge">✅ PSPO-I Certified</span>
+      <span class="badge">✅ PSPO-I · AWS SA · Terraform</span>
     </div>
     <div class="hero-grid">
       <div>
         <h1>Hi, I'm <span>Shubham Khandelwal</span></h1>
         <p class="tagline">Product &amp; Technology Professional — Platforms, APIs &amp; Customer Experience</p>
-        <p class="lead">I started as a business analyst in Tokyo, where I led a team to build an airline e-commerce platform and designed APIs for 40+ microservices. Today I run DevOps platforms for fintech teams and am growing into product management: owning the "what" and "why" as well as the "how", and turning messy problems into products people actually use.</p>
+        <p class="now"><b>Now:</b> Senior DevOps Engineer, Xoriant (Pune) &nbsp;·&nbsp; <b>Before:</b> Business Analyst, TCS (Tokyo)</p>
+        <p class="lead">I led a 10-member team to build an airline booking platform that grew online bookings 20% in year one, and designed APIs for 40+ microservices. Now I run fintech DevOps platforms and am moving into product management.</p>
         <div class="cta">
-          <a class="btn primary" href="#contact">Get in touch</a>
-          <a class="btn" href="#journey">See my journey</a>
+          <a class="btn primary" href="mailto:khandelwalshubham1996@gmail.com">✉ Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn" href="#experience">See experience ↓</a>
         </div>
       </div>
       <div class="avatar" aria-hidden="true">SK</div>
@@ -151,28 +157,9 @@
   </div>
 </header>
 
-<section id="education">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">01</span><h2>Education</h2></div>
-    <p class="sec-sub">Where I studied and what I focused on.</p>
-    <div class="grid2">
-      <div class="card">
-        <h3>Certification in Product Management</h3>
-        <p class="meta">HelloPM · Delhi</p>
-        <p>Structured programme covering product discovery, roadmapping, metrics, prioritisation and stakeholder management. This portfolio is part of the coursework.</p>
-      </div>
-      <div class="card">
-        <h3>Bachelor of Engineering, Mechanical</h3>
-        <p class="meta">North Maharashtra University · 2015 – 2018</p>
-        <p>Engineering fundamentals and structured problem-solving that I now apply to software, platforms and product decisions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="experience">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">02</span><h2>Experience</h2></div>
+    <div class="sec-head"><span class="num">01</span><h2>Experience</h2></div>
     <p class="sec-sub">8+ years across airline and fintech technology, from requirements and API design in Tokyo to running DevOps platforms at scale.</p>
     <div class="timeline">
 
@@ -209,7 +196,7 @@
 
 <section id="projects">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">03</span><h2>Projects</h2></div>
+    <div class="sec-head"><span class="num">02</span><h2>Projects</h2></div>
     <p class="sec-sub">Product work I've shipped, led or contributed to. Detailed case studies are on the way.</p>
     <div class="grid2">
       <div class="card">
@@ -250,7 +237,7 @@
 
 <section id="skills">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">04</span><h2>Skills &amp; certifications</h2></div>
+    <div class="sec-head"><span class="num">03</span><h2>Skills &amp; certifications</h2></div>
     <p class="sec-sub">The product, technical and analytical toolkit I work with.</p>
     <div class="grid2">
       <div class="card">
@@ -276,6 +263,25 @@
         <div class="chips">
           <span class="chip">PSPO-I</span><span class="chip">Product Management · HelloPM</span><span class="chip">AWS Certified Solutions Architect – Associate</span><span class="chip">HashiCorp Terraform Associate</span><span class="chip">Anthropic AI Practitioner</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="num">04</span><h2>Education</h2></div>
+    <p class="sec-sub">Where I studied and what I focused on.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Certification in Product Management</h3>
+        <p class="meta">HelloPM · Delhi</p>
+        <p>Structured programme covering product discovery, roadmapping, metrics, prioritisation and stakeholder management. This portfolio is part of the coursework.</p>
+      </div>
+      <div class="card">
+        <h3>Bachelor of Engineering, Mechanical</h3>
+        <p class="meta">North Maharashtra University · 2015 – 2018</p>
+        <p>Engineering fundamentals and structured problem-solving that I now apply to software, platforms and product decisions.</p>
       </div>
     </div>
   </div>
@@ -399,6 +405,7 @@
   document.getElementById('menu').onclick=()=>links.classList.toggle('open');
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));}
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
