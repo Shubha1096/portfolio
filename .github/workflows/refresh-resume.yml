@@ -1,0 +1,63 @@
+name: Refresh resume PDF
+
+# Re-exports the Google Doc CV to resume.pdf so the site's "View resume"
+# button always shows a recent version. Edit the Google Doc as usual.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: refresh-resume
+  cancel-in-progress: false
+
+env:
+  DOC_ID: 1-w5zkXB8e-uduhYC_CwVugIfAzwQOuZ2Mluh8SNOHfs
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Export the Google Doc as PDF
+        run: |
+          curl -fsSL --retry 3 --retry-delay 5 \
+            "https://docs.google.com/document/d/${DOC_ID}/export?format=pdf" \
+            -o new.pdf
+          # Guard: only continue if we really got a PDF (not a sign-in page)
+          [ "$(head -c 4 new.pdf)" = "%PDF" ] || { echo "Export did not return a PDF. Is the doc shared as 'Anyone with the link'?"; exit 1; }
+          [ "$(stat -c%s new.pdf)" -gt 10000 ] || { echo "PDF is suspiciously small"; exit 1; }
+
+      - name: Detect real content changes
+        id: diff
+        run: |
+          sudo apt-get install -y -qq poppler-utils >/dev/null
+          pdftotext -layout new.pdf new.txt
+          if [ -f resume.pdf ]; then pdftotext -layout resume.pdf old.txt; else : > old.txt; fi
+          if cmp -s new.txt old.txt; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Resume text unchanged, nothing to commit."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit updated PDF
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          mv new.pdf resume.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resume.pdf
+          git commit -m "Refresh resume.pdf from Google Doc"
+          git push
+
+      - name: Trigger a Pages rebuild
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages rebuild request skipped"
