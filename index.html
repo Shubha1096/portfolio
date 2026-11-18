@@ -162,6 +162,7 @@
   .shot.wide{max-width:100%}
   .shot.wide img{max-height:none}
   .proof{font-size:.86rem!important;margin-top:10px!important}
+  .tl-item .proof{color:var(--muted);margin-top:10px}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -171,7 +172,7 @@
     <a class="logo" href="#home">SHUBHAM KHANDELWAL</a>
     <div class="links" id="links">
       <a href="#work">Work</a>
-      <a href="#journey">Journey</a>
+      <a href="#experience">Experience</a>
       <a href="#about">About</a>
       <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
       <a class="btn primary" style="padding:8px 16px;color:#fff" href="#contact">Contact</a>
@@ -339,9 +340,55 @@
   </div>
 </section>
 
-<section id="journey">
+<section id="experience">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">02</span><h2>How I got here</h2></div>
+    <div class="sec-head"><span class="num">02</span><h2>Experience</h2></div>
+    <p class="sec-sub">8+ years across airline e-commerce and fintech, including 6+ years onsite in Tokyo.</p>
+    <div class="timeline">
+      <div class="tl-item card">
+        <span class="date">Dec 2024 – Present</span>
+        <h3>Platform Owner, CI/CD &amp; DevOps Tooling</h3>
+        <p class="meta">Xoriant Solutions · Pune</p>
+        <ul>
+          <li>Drove the Jenkins OSS to CloudBees CI migration for 100+ developers across 5+ teams: gathered requirements, defined the onboarding model and phased the rollout. All 30+ pipelines migrated in 2 months.</li>
+          <li>Cut weekly tool outages by ~70% by running root cause analysis on 200+ incidents and fixing the recurring infrastructure gaps disrupting developers across 6 fintech teams.</li>
+          <li>Automated upgrades and patching across 8+ DevOps tools, making patch cycles 60% faster, saving 3 hours of manual effort per cycle and removing planned downtime for 100+ developers.</li>
+          <li>Identified 2–3 hour incident investigations as a productivity drain and proposed a RAG-based Platform Assistant (PRD complete), selected in the company ideathon.</li>
+          <li>Own day-to-day operation of 8+ enterprise DevOps tools and Docker-based deployments for 50+ microservices on AWS, handling 50+ support requests a month.</li>
+        </ul>
+        <div class="chips"><span class="chip">100+ developers onboarded</span><span class="chip">~70% fewer outages</span><span class="chip">60% faster patching</span><span class="chip">Ideathon selection</span></div>
+      </div>
+      <div class="tl-item card">
+        <span class="date">Oct 2019 – Nov 2024</span>
+        <h3>Senior Business Analyst, Airline</h3>
+        <p class="meta">Tata Consultancy Services · Tokyo, Japan (onsite for Japan Airlines)</p>
+        <ul>
+          <li>Led a 10-member BA team to deliver airline e-commerce web and mobile apps for the domestic market, owning requirements, scope and releases end to end. Online bookings grew 20% in year one.</li>
+          <li>Ran requirements workshops with 10+ business stakeholders, prioritised features by business value and delivery effort, and turned them into BRDs, user stories and wireframes for the booking and post-booking platform.</li>
+          <li>Designed API specifications for 40+ microservices across reservation and third-party systems; reusable REST/SOAP contracts drove 20% API reuse.</li>
+          <li>Managed backlog grooming and sprint planning across 35+ sprints, delivering 12 production releases on schedule.</li>
+        </ul>
+        <div class="chips"><span class="chip">+20% online bookings</span><span class="chip">300+ user stories</span><span class="chip">12 releases</span><span class="chip">40+ microservice APIs</span></div>
+      </div>
+      <div class="tl-item card">
+        <span class="date">Oct 2018 – Sep 2019</span>
+        <h3>QA Analyst</h3>
+        <p class="meta">Tata Consultancy Services · Tokyo, Japan (onsite for Japan Airlines)</p>
+        <ul>
+          <li>Contributed to the Self Bag Drop rollout for Japan Airlines' domestic market: interviewed passengers on site to find usability issues and worked with cross-functional teams to fix them, reducing bag check-in time to 40 seconds.</li>
+          <li>Validated change requests across airline departure control system modules and supported interline testing with partner airlines.</li>
+        </ul>
+        <p class="proof">Proof: JAL press release, 20 Feb 2020, on JAL's first domestic Self Baggage Drop units at Haneda (<a href="https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">Japanese original ↗</a> · <a href="https://translate.google.com/translate?sl=ja&amp;tl=en&amp;u=https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">English translation ↗</a>)</p>
+        <div class="chips"><span class="chip">Self Bag Drop</span><span class="chip">User research</span><span class="chip">Japan Airlines</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Journey is hidden for now (to be revamped). Remove the "hidden" attribute below to show it again. -->
+<section id="journey" hidden>
+  <div class="wrap reveal">
+    <div class="sec-head"><h2>How I got here</h2></div>
     <p class="sec-sub">From my first job at TCS to six years onsite in Tokyo, into platform engineering, and now AI product management. Each move taught me something I use as a PM.</p>
     <div class="journey">
 
@@ -472,7 +519,7 @@
   }
   openFromHash();addEventListener('hashchange',openFromHash);
 
-  const secs=[...document.querySelectorAll('section[id]')];
+  const secs=[...document.querySelectorAll('section[id]:not([hidden])')];
   const navLinks=[...links.querySelectorAll('a')];
   const topBtn=document.getElementById('top');
   addEventListener('scroll',()=>{
