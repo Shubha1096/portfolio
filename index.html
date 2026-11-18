@@ -10,525 +10,552 @@
 <meta property="og:description" content="Led an airline e-commerce launch (+20% online bookings). Now building AI products for engineers. Case studies inside.">
 <meta property="og:url" content="https://shubha1096.github.io/portfolio/">
 <meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#f6f7fb; --surface:#ffffff; --surface2:#eef0f6; --text:#161a23; --muted:#5b6475;
-    --accent:#0d9488; --accent2:#4f46e5; --border:#e1e4ee; --radius:16px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:80px}
-  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+/* VOICE: calm, editorial, evidence first. IDEA: a product spec you can skim.
+   PICTURE: one visual per case study, drawn from the work itself.
+   COLOUR: white page, near-black ink, one cobalt accent. TYPE: IBM Plex Sans throughout.
+   LAYOUT: full-width rows, hairlines instead of boxes, max 1120px. */
+:root{
+  --bg:#ffffff;--band:#f6f7f9;--ink:#111418;--muted:#525a66;--soft:#7a828e;
+  --line:#e4e7ec;--accent:#1f4fd1;--accent-ink:#173da6;--tint:#eef2fd;
+  --wrap:1120px;color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font:17px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 max(4vw,20px)}
+h1,h2,h3{line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:700}
+h3{font-size:1.3rem;font-weight:600}
+p{text-wrap:pretty}
 
-  nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-weight:800;letter-spacing:.08em;font-size:.95rem;color:var(--text)}
-  .links{display:flex;gap:26px;align-items:center}
-  .links a{color:var(--muted);font-size:.92rem;font-weight:500}
-  .links a:hover,.links a.active{color:var(--text);text-decoration:none}
-  .icon-btn{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:10px;width:38px;height:38px;cursor:pointer;font-size:1rem}
-  #menu{display:none}
-  @media(max-width:760px){
-    #menu{display:block}
-    .links{position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:18px 24px;border-bottom:1px solid var(--border);display:none;align-items:flex-start}
-    .links.open{display:flex}
-  }
+/* Nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:700;color:var(--ink);font-size:1rem}
+.links{display:flex;gap:24px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem;font-weight:500}
+.links a:hover,.links a.active{color:var(--ink);text-decoration:none}
+.links a.cta-nav{color:#fff;background:var(--ink);padding:8px 16px;border-radius:8px}
+.links a.cta-nav:hover{background:var(--accent)}
+#menu{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;font-size:1.1rem;cursor:pointer;color:var(--ink)}
+@media(max-width:820px){
+  #menu{display:block}
+  .links{position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#fff;padding:12px max(4vw,20px) 18px;border-bottom:1px solid var(--line);display:none}
+  .links.open{display:flex}
+  .links a{padding:10px 0;font-size:1.05rem}
+}
 
-  .hero{padding:48px 0 40px}
-  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-  .badge{background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:999px;font-size:.82rem;color:var(--muted)}
-  .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
-  @media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
-  h1{font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.1;font-weight:800;letter-spacing:-.02em}
-  h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .tagline{font-size:1.2rem;color:var(--accent);margin:14px 0 18px;font-weight:600}
-  .lead{color:var(--muted);max-width:56ch}
-  .cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;border:1px solid var(--border);color:var(--text);background:var(--surface);cursor:pointer;font-family:inherit}
-  .btn:hover{text-decoration:none;transform:translateY(-1px)}
-  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none}
-  .avatar{aspect-ratio:1;border-radius:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-size:4.5rem;font-weight:800;color:#fff;max-width:320px;margin-left:auto;width:100%}
-  @media(max-width:820px){.avatar{margin:0;max-width:200px}}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border-radius:10px;font-weight:600;font-size:.98rem;border:1px solid var(--line);color:var(--ink);background:#fff}
+.btn:hover{text-decoration:none;border-color:var(--ink)}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
 
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:32px}
-  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px}
-  .stat b{display:block;font-size:1.9rem;font-weight:800;color:var(--accent)}
-  .stat span{color:var(--muted);font-size:.88rem}
+/* Hero */
+.hero{padding:clamp(40px,7vw,88px) 0 clamp(36px,5vw,56px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.hello{font-size:1.05rem;color:var(--muted);font-weight:500}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);font-weight:700;margin:10px 0 18px;line-height:1.08}
+.lead{color:var(--muted);font-size:1.1rem;max-width:58ch}
+.open{display:inline-block;margin-top:18px;font-size:.95rem;color:var(--ink);border-left:3px solid var(--accent);padding-left:12px}
+.now{margin-top:10px;font-size:.95rem;color:var(--muted)}
+.now b{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.portrait{margin:0;justify-self:end;width:100%;max-width:340px}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:var(--band)}
+.ph-photo{width:100%;aspect-ratio:4/5;border-radius:16px;background:var(--band);border:1px solid var(--line);display:grid;place-items:center;font-size:clamp(2.4rem,6vw,4rem);font-weight:700;color:var(--soft)}
+@media(max-width:820px){
+  .hero-grid{grid-template-columns:1fr}
+  .portrait{order:-1;justify-self:start;max-width:132px}
+  .portrait img{border-radius:50%;aspect-ratio:1}
+  .ph-photo{border-radius:50%;aspect-ratio:1;font-size:2.2rem}
+}
+.proofbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proofbar div{padding:20px 20px 20px 0}
+.proofbar div+div{padding-left:20px;border-left:1px solid var(--line)}
+.proofbar b{display:block;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;line-height:1.1}
+.proofbar span{color:var(--muted);font-size:.92rem;display:block;margin-top:4px}
+@media(max-width:820px){
+  .proofbar{grid-template-columns:1fr 1fr}
+  .proofbar div{padding:16px 12px 16px 0}
+  .proofbar div+div{padding-left:0;border-left:0}
+  .proofbar div:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+  .proofbar div:nth-child(n+3){border-top:1px solid var(--line)}
+}
 
-  section{padding:56px 0}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
-  .num{color:var(--accent);font-weight:700;font-size:.95rem;font-variant-numeric:tabular-nums}
-  h2{font-size:clamp(1.6rem,3.5vw,2.1rem);letter-spacing:-.01em}
-  .sec-sub{color:var(--muted);max-width:62ch;margin-bottom:36px}
-  h3{font-size:1.15rem}
-  h4{font-size:1rem;margin-top:22px}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.2s}
-  .card:hover{border-color:var(--accent)}
-  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-  .meta{color:var(--muted);font-size:.88rem;margin:4px 0 10px}
+/* Sections */
+section{padding:clamp(56px,8vw,96px) 0}
+section.band{background:var(--band)}
+.sec-head{max-width:68ch;margin-bottom:clamp(28px,4vw,44px)}
+.sec-head p{color:var(--muted);margin-top:10px}
 
-  .timeline{position:relative;padding-left:28px;border-left:2px solid var(--border);display:grid;gap:28px}
-  .tl-item{position:relative}
-  .tl-item::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
-  .tl-item .date{color:var(--accent);font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-  .tl-item ul{margin:12px 0 0 18px;color:var(--muted)}
-  .tl-item li{margin-bottom:6px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .chip{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:4px 10px;font-size:.78rem;font-weight:600;color:var(--text)}
+/* Case studies */
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);padding:clamp(28px,4vw,44px) 0;border-top:1px solid var(--line);scroll-margin-top:72px}
+.case:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:860px){.case{grid-template-columns:1fr}.case>.visual{order:2}}
+.kicker{font-size:.88rem;color:var(--soft);font-weight:500}
+.kicker .tag{color:var(--accent-ink);font-weight:600}
+.kicker .wip{color:#a05a00;font-weight:600}
+.case h3{font-size:clamp(1.35rem,2.4vw,1.65rem);margin:6px 0 16px}
+.tldr{display:grid;gap:12px}
+.tldr div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px}
+.tldr dt{font-size:.82rem;font-weight:600;color:var(--soft);padding-top:3px}
+.tldr dd{color:var(--ink)}
+@media(max-width:480px){.tldr div{grid-template-columns:1fr;gap:2px}}
+.actions{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:20px}
+.case details{width:100%}
+.case summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;color:var(--accent)}
+.case summary::-webkit-details-marker{display:none}
+.case summary::after{content:"+";font-size:1.2rem;line-height:1}
+.case details[open] summary::after{content:"–"}
+.deck{font-weight:600}
+.deck[href=""],.deck:not([href]){display:none}
+.cs{max-width:66ch;margin-top:8px}
+.cs h4{font-size:1rem;margin-top:18px}
+.cs p,.cs li{color:var(--muted)}
+.cs ul,.cs ol{margin:6px 0 0 20px}
+.cs li{margin-bottom:4px}
 
-  /* Journey timeline */
-  .journey{position:relative;display:grid;gap:34px;padding-left:44px}
-  .journey::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--accent),var(--accent2))}
-  .step{position:relative}
-  .step .dot{position:absolute;left:-44px;top:4px;width:32px;height:32px;border-radius:50%;background:var(--surface);border:3px solid var(--accent);display:grid;place-items:center;font-size:.85rem;font-weight:800;color:var(--accent)}
-  .step.pm .dot{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
-  .stage{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px}
-  .step .when{color:var(--muted);font-size:.85rem;font-weight:600}
-  .step ul{margin:12px 0 0 18px;color:var(--muted)}
-  .step li{margin-bottom:6px}
-  .shot{margin:16px 0 0;max-width:560px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:var(--surface)}
-  .shot img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
-  .shot figcaption{padding:10px 14px;font-size:.85rem;color:var(--muted)}
-  .win{margin-top:14px;padding:12px 16px;border-radius:12px;background:var(--surface2);border-left:4px solid var(--accent);font-size:.92rem}
-  .win b{color:var(--accent)}
+/* Case visuals */
+.visual{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3vw,32px);align-self:start}
+.v-label{font-size:.8rem;font-weight:600;color:var(--soft);margin-bottom:14px}
+.big{font-size:clamp(3rem,7vw,4.6rem);font-weight:700;line-height:1;color:var(--accent-ink)}
+.big-sub{color:var(--muted);margin-top:6px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:22px}
+.facts div{background:var(--band);padding:12px 14px}
+.facts b{display:block;font-size:1.25rem}
+.facts span{font-size:.86rem;color:var(--muted)}
+.flow{display:grid;gap:0}
+.node{background:var(--band);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.93rem}
+.node b{display:block;font-weight:600}
+.node span{color:var(--muted);font-size:.86rem}
+.node.key{border-color:var(--accent);background:var(--tint)}
+.arrow{height:20px;display:grid;place-items:center;color:var(--soft);font-size:.9rem;line-height:1}
+.srcs{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.srcs i{font-style:normal;font-size:.8rem;background:var(--band);border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--ink)}
+.guard{margin-top:14px;font-size:.88rem;color:var(--muted);border-left:3px solid var(--accent);padding-left:12px}
+.bars{display:grid;gap:16px}
+.bar-row .lbl{display:flex;justify-content:space-between;gap:12px;font-size:.92rem}
+.bar-row .lbl b{white-space:nowrap}
+.bar{height:12px;background:var(--band);border:1px solid var(--line);border-radius:99px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.funnel{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:22px;font-size:.9rem}
+.funnel span{background:var(--band);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.funnel span.key{border-color:var(--accent);background:var(--tint);font-weight:600}
 
-  .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
-  @media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
-  .contact-list{display:grid;gap:14px;margin-top:18px}
-  .contact-list a{display:flex;gap:12px;align-items:center;color:var(--text)}
-  form{display:grid;gap:14px}
-  label{font-size:.85rem;color:var(--muted);font-weight:600}
-  input,textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font:inherit;margin-top:6px}
-  input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
-  textarea{min-height:130px;resize:vertical}
+/* Experience */
+.role{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(16px,3vw,40px);padding:28px 0;border-top:1px solid var(--line)}
+.role:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:760px){.role{grid-template-columns:1fr;gap:6px}}
+.when{font-size:.92rem;color:var(--muted)}
+.when b{display:block;color:var(--ink);font-weight:600}
+.role h3{font-size:1.2rem}
+.role ul{margin:12px 0 0 20px;color:var(--muted)}
+.role li{margin-bottom:8px}
+.proof{font-size:.9rem;color:var(--muted);margin-top:10px}
+.proof b{color:var(--ink)}
 
-  footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:.88rem;text-align:center}
-  #top{position:fixed;right:20px;bottom:20px;opacity:0;pointer-events:none;transition:.2s}
-  #top.show{opacity:1;pointer-events:auto}
+/* Story */
+.why{font-size:clamp(1.1rem,1.8vw,1.25rem);max-width:68ch;color:var(--ink)}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin-top:36px;border-top:2px solid var(--ink)}
+.steps li{padding:16px 16px 0 0;position:relative}
+.steps li::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.steps li.current::before{background:var(--accent);border-color:var(--accent)}
+.steps .yr{font-size:.82rem;font-weight:600;color:var(--soft)}
+.steps b{display:block;margin:4px 0 4px;font-size:1rem}
+.steps span{display:block;color:var(--muted);font-size:.9rem;line-height:1.45}
+@media(max-width:900px){
+  .steps{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--ink);margin-left:6px}
+  .steps li{padding:0 0 22px 22px}
+  .steps li::before{top:4px;left:-7px}
+}
+.story-photo{margin-top:44px}
+.story-photo img{display:block;width:100%;height:auto;border-radius:14px}
+.story-photo figcaption{font-size:.9rem;color:var(--muted);margin-top:10px;max-width:80ch}
 
-  .js .reveal{opacity:0;transform:translateY(18px);transition:.6s}
-  .js .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-  .now{margin:0 0 18px;padding:10px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:.92rem;color:var(--muted);display:inline-block}
-  .now b{color:var(--text)}
-  .badge.open{border-color:var(--accent);color:var(--accent);font-weight:600}
-  .pm-title{font-size:1.15rem;margin:36px 0 14px}
-  .pm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-  .pm-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;transition:.2s}
-  .pm-card:hover{border-color:var(--accent)}
-  .pm-card h3{font-size:.98rem;margin-bottom:4px}
-  .pm-card p{color:var(--muted);font-size:.88rem;line-height:1.5}
+/* About */
+.about{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,4vw,48px)}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.about h3{font-size:1.05rem;margin-bottom:10px}
+.about p,.about li{color:var(--muted);font-size:.96rem}
+.about ul{list-style:none;display:grid;gap:8px}
+.about li b{color:var(--ink);font-weight:600}
 
-  .cases{display:grid;gap:22px}
-  .case{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;scroll-margin-top:90px}
-  .case .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .case h3{font-size:1.3rem;margin:12px 0 16px}
-  .tldr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  @media(max-width:760px){.tldr{grid-template-columns:1fr;gap:12px}}
-  .tldr .k{display:block;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent2);margin-bottom:4px}
-  .tldr p{color:var(--muted);font-size:.94rem;line-height:1.55}
-  .tldr b{color:var(--text)}
-  .case details{margin-top:14px}
-  .case summary{cursor:pointer;font-weight:700;color:var(--accent);list-style:none;display:inline-flex;align-items:center;gap:8px;padding:6px 0;min-height:44px}
-  .case summary::-webkit-details-marker{display:none}
-  .case summary::after{content:"↓";transition:.2s}
-  .case details[open] summary::after{transform:rotate(180deg)}
-  .cs{max-width:72ch;padding-top:4px}
-  .cs h4{margin-top:18px;font-size:.98rem}
-  .cs p,.cs li{color:var(--muted)}
-  .cs ul,.cs ol{margin:6px 0 0 20px}
-  .cs li{margin-bottom:4px}
-  .chip.real{border-color:var(--accent);color:var(--accent)}
-  .chip.wip{border-color:#d97706;color:#b45309;background:#fffbeb}
-  .step p{color:var(--muted);margin-top:10px}
-  .card h4{font-size:.9rem;margin-top:18px;color:var(--muted)}
-  .tools{margin-top:18px;color:var(--muted);font-size:.92rem}
-  .tools b{color:var(--text)}
-  ul.plain{list-style:none;margin-top:10px;display:grid;gap:8px;color:var(--muted);font-size:.94rem}
-  ul.plain b{color:var(--text)}
-  .contact-row{display:flex;flex-wrap:wrap;gap:12px}
-  .sec-sub b{color:var(--text)}
-  .deck{display:inline-flex;align-items:center;margin-top:10px;padding:10px 18px;border-radius:10px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff!important;min-height:44px}
-  .deck:hover{text-decoration:none;transform:translateY(-1px)}
-  .deck[href=""],.deck:not([href]){display:none}
-  .shot img{aspect-ratio:auto;max-height:420px}
-  .shot.ph{display:none}
-  .subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;margin-top:12px}
-  .sub{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
-  .sub h4{font-size:1rem;margin:0 0 2px}
-  .sub p{margin-top:8px;font-size:.94rem}
-  .shot.wide{max-width:100%}
-  .shot.wide img{max-height:none}
-  .proof{font-size:.86rem!important;margin-top:10px!important}
-  .tl-item .proof{color:var(--muted);margin-top:10px}
+/* Contact */
+.contact h2{font-size:clamp(1.9rem,4vw,2.8rem)}
+.contact p{color:var(--muted);margin-top:12px;max-width:60ch}
+.contact .cta{margin-top:24px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-size:.88rem}
 </style>
-<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+
 <nav>
   <div class="wrap">
-    <a class="logo" href="#home">SHUBHAM KHANDELWAL</a>
+    <a class="logo" href="#home">Shubham Khandelwal</a>
     <div class="links" id="links">
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
+      <a href="#story">Story</a>
       <a href="#about">About</a>
       <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
-      <a class="btn primary" style="padding:8px 16px;color:#fff" href="#contact">Contact</a>
+      <a class="cta-nav" href="#contact">Contact</a>
     </div>
-    <button class="icon-btn" id="menu" aria-label="Menu">☰</button>
+    <button id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
 </nav>
 
 <header class="hero" id="home">
   <div class="wrap">
-    <div class="badges">
-      <span class="badge open">Open to Technical / AI / Platform Product Manager roles</span>
-      <span class="badge">8+ yrs · Airline e-commerce &amp; Fintech</span>
-      <span class="badge">6+ yrs onsite with Japanese clients</span>
-    </div>
     <div class="hero-grid">
       <div>
-        <h1>Hi, I'm <span>Shubham Khandelwal</span></h1>
-        <p class="tagline">I turn complex technical problems into products people adopt.</p>
-        <p class="now"><b>Now:</b> Platform Owner, CI/CD &amp; DevOps Tooling · Xoriant (Pune) &nbsp;·&nbsp; <b>Before:</b> Senior Business Analyst · TCS (Tokyo)</p>
-        <p class="lead">I led a 10-member team that took an airline e-commerce product from requirements to launch, and online bookings grew 20% in its first year. Today I own the CI/CD platform used by 100+ fintech developers, and I'm building AI products for engineers.</p>
+        <p class="hello">Hi, I'm Shubham Khandelwal</p>
+        <h1>I turn complex technical problems into products people adopt.</h1>
+        <p class="lead">I led a 10-member team that took Japan Airlines' domestic e-commerce product from requirements to launch, working onsite in Tokyo. Today I own the CI/CD platform used by 100+ fintech developers, and I'm building AI products for engineers.</p>
+        <p class="open">Open to Technical, AI and Platform Product Manager roles</p>
+        <p class="now"><b>Now:</b> Platform Owner, CI/CD &amp; DevOps Tooling · Xoriant, Pune &nbsp;·&nbsp; <b>Before:</b> Senior Business Analyst · TCS, Tokyo</p>
         <div class="cta">
-          <a class="btn primary" href="#work">See my work ↓</a>
+          <a class="btn primary" href="#work">See my work</a>
           <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
           <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <div class="avatar" aria-hidden="true">SK</div>
+      <figure class="portrait">
+        <!-- Photo placeholder: upload images/profile.jpg and it replaces the initials automatically -->
+        <div class="ph-photo" aria-hidden="true">SK</div>
+        <img src="images/profile.jpg" alt="Shubham Khandelwal" width="560" height="700" onload="this.previousElementSibling.remove()" onerror="this.remove()">
+      </figure>
     </div>
-    <div class="stats">
-      <div class="stat"><b>+20%</b><span>online bookings in the first year after launch</span></div>
-      <div class="stat"><b>100+</b><span>developers adopted the new CI/CD platform in 2 months</span></div>
-      <div class="stat"><b>~70%</b><span>fewer weekly tool outages for 6 fintech teams</span></div>
-      <div class="stat"><b>300+</b><span>user stories written and delivered</span></div>
-      <div class="stat"><b>6+ yrs</b><span>onsite in Tokyo, working side by side with the client</span></div>
+
+    <div class="proofbar">
+      <div><b>+20%</b><span>online bookings in the first year after launch</span></div>
+      <div><b>100+</b><span>developers adopted a new CI/CD platform in 2 months</span></div>
+      <div><b>~70%</b><span>fewer weekly tool outages for 6 fintech teams</span></div>
+      <div><b>6+ yrs</b><span>onsite in Tokyo with Japan Airlines</span></div>
     </div>
   </div>
 </header>
 
-<section id="work">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">01</span><h2>Work</h2></div>
-    <p class="sec-sub">Four projects: two from my jobs and two I'm building on my AI product management journey. Each starts with a 30-second summary. Open it for the full story.</p>
-
-    <div class="cases">
-
-      <article class="case" id="airline-ecommerce">
-        <div class="tags"><span class="chip real">Shipped · Real users</span><span class="chip">Consumer e-commerce</span><span class="chip">Japan Airlines</span></div>
-        <h3>Launching an airline e-commerce platform</h3>
-        <div class="tldr">
-          <div><span class="k">Problem</span><p>Japan Airlines needed web and mobile booking apps for its domestic market, covering booking and everything after it.</p></div>
-          <div><span class="k">My role</span><p>Led a 10-member BA team onsite in Tokyo, owning requirements, scope and releases end to end.</p></div>
-          <div><span class="k">Outcome</span><p><b>+20% online bookings</b> in year one; 12 releases shipped on schedule.</p></div>
-        </div>
-        <details>
-          <summary>Read the full case study</summary>
-          <div class="cs">
-            <h4>Discovery</h4>
-            <p>Ran requirements workshops with 10+ business stakeholders and turned what I heard into BRDs, user stories and wireframes for the booking and post-booking journeys.</p>
-            <h4>Prioritisation</h4>
-            <p>Ranked features by business value against delivery effort, so each release carried the changes that mattered most to customers and the business.</p>
-            <h4>Platform decisions</h4>
-            <p>Designed API specifications for 40+ microservices across reservation systems and third-party services. Reusable REST/SOAP contracts drove 20% API reuse and cut duplicate integration work for the engineering teams.</p>
-            <h4>Delivery</h4>
-            <p>Ran backlog grooming and sprint planning with development and QA teams across 35+ sprints and delivered 12 production releases on schedule. The whole team was there for the 2 a.m. go-live in 2024.</p>
-            <h4>Result</h4>
-            <p>Online bookings grew 20% in the first year after launch.</p>
-            <h4>What I learned</h4>
-            <p>How to own an outcome, not just a task list, while working across languages, cultures and a large group of stakeholders.</p>
-          </div>
-        </details>
-        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
-        <a class="deck" href="" target="_blank" rel="noopener">View the full deck →</a>
-      </article>
-
-      <article class="case" id="platform-assistant">
-        <div class="tags"><span class="chip">AI product · PRD</span><span class="chip real">Selected in Xoriant ideathon</span></div>
-        <h3>RAG-Based Platform Assistant</h3>
-        <div class="tldr">
-          <div><span class="k">Problem</span><p>Platform engineers lose an estimated 3–4 hours a week searching across Jira, ServiceNow, Confluence and vendor docs; incident investigations take 2–3 hours.</p></div>
-          <div><span class="k">My role</span><p>Spotted the problem in my own team and wrote the PRD for an AI assistant to solve it.</p></div>
-          <div><span class="k">Outcome</span><p>PRD complete; <b>selected in the company ideathon</b>.</p></div>
-        </div>
-        <details>
-          <summary>Read the full case study</summary>
-          <div class="cs">
-            <h4>Who it's for</h4>
-            <p>Platform engineers in regulated financial services who handle incidents and support requests and need answers that are spread across four different systems.</p>
-            <h4>The idea</h4>
-            <p>One assistant that searches Jira, ServiceNow, Confluence and vendor documentation together and answers with sources, using retrieval-augmented generation (RAG).</p>
-            <h4>What the PRD covers</h4>
-            <ul>
-              <li>The RAG architecture and the knowledge sources it connects</li>
-              <li>An evaluation set of real questions to measure answer quality before launch</li>
-              <li>Success metrics: investigation time, answer accuracy and adoption</li>
-              <li>Guardrails suited to a regulated environment</li>
-            </ul>
-            <h4>Why it matters</h4>
-            <p>Every hour an engineer spends searching is an hour not spent fixing. Cutting a 2–3 hour investigation shortens incidents for every team that depends on the platform.</p>
-          </div>
-        </details>
-        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
-        <a class="deck" href="docs/platform-assistant-prd.pdf" target="_blank" rel="noopener">Read the full PRD (PDF) →</a>
-      </article>
-
-      <article class="case" id="infratrace">
-        <div class="tags"><span class="chip wip">In progress · Buildathon</span><span class="chip">AI product · MVP</span></div>
-        <h3>InfraTrace</h3>
-        <div class="tldr">
-          <div><span class="k">Problem</span><p>When an incident is fixed, the knowledge stays with the engineer who fixed it. The next person to hit the same issue has to track that engineer down.</p></div>
-          <div><span class="k">My role</span><p>Building the MVP as my buildathon project in an AI product management cohort.</p></div>
-          <div><span class="k">Status</span><p>MVP in progress.</p></div>
-        </div>
-        <details>
-          <summary>Read more</summary>
-          <div class="cs">
-            <h4>What it does</h4>
-            <ol>
-              <li>Records the commands and infrastructure changes an engineer makes during a fix.</li>
-              <li>Links them to the matching ServiceNow or Jira ticket.</li>
-              <li>Writes a reproducible resolution note automatically when the ticket closes.</li>
-            </ol>
-            <h4>Why I'm building it</h4>
-            <p>After running root cause analysis on 200+ incidents, I kept seeing the same fixes rediscovered from scratch. InfraTrace captures the fix while it happens, so the next engineer doesn't have to chase the first one.</p>
-            <p class="meta">I'll share the MVP and what I learned here once it's ready.</p>
-          </div>
-        </details>
-        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
-        <a class="deck" href="" target="_blank" rel="noopener">View the full deck →</a>
-      </article>
-
-      <article class="case" id="zomato">
-        <div class="tags"><span class="chip">Case study</span><span class="chip">Consumer · User research</span></div>
-        <h3>Zomato: hygiene trust for working professionals</h3>
-        <div class="tldr">
-          <div><span class="k">Problem</span><p>Working professionals hesitate to order from restaurants they don't know. Why?</p></div>
-          <div><span class="k">My role</span><p>Solo case study: research, prioritisation and prototype.</p></div>
-          <div><span class="k">Outcome</span><p>Found hygiene uncertainty is the <b>top barrier (90%)</b>; prototyped a Verified Hygiene Score.</p></div>
-        </div>
-        <details>
-          <summary>Read the full case study</summary>
-          <div class="cs">
-            <h4>Research</h4>
-            <p>Surveyed 31 working professionals and interviewed 2. 28 of 31 (90%) said hygiene was a concern when ordering, and 52% picked reliable hygiene information as the improvement they wanted most.</p>
-            <h4>Prioritisation</h4>
-            <p>Generated 7 solution ideas and scored them with RICE (reach, impact, confidence, effort).</p>
-            <h4>Solution</h4>
-            <ul>
-              <li><b>Verified Hygiene Score</b> shown on each restaurant</li>
-              <li><b>Hygiene Review Summary</b> that pulls hygiene mentions out of customer reviews</li>
-            </ul>
-            <h4>Measuring success</h4>
-            <ul>
-              <li><b>Key metric:</b> order conversion after viewing hygiene information</li>
-              <li><b>Secondary:</b> hygiene information engagement rate on restaurant pages</li>
-              <li><b>Guardrail:</b> hygiene-related complaints per 1,000 orders, so more trust doesn't mean more bad orders</li>
-            </ul>
-          </div>
-        </details>
-        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
-        <a class="deck" href="docs/zomato-hygiene-case-study.pdf" target="_blank" rel="noopener">Read the full case study (PDF) →</a>
-      </article>
-
+<section id="work" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Work</h2>
+      <p>Two products from my jobs and two I'm building on my AI product management journey. Each has a 30-second summary; open it for the full story.</p>
     </div>
+
+    <article class="case" id="airline-ecommerce">
+      <div class="visual" aria-label="Airline e-commerce launch at a glance">
+        <div class="v-label">Launch at a glance</div>
+        <div class="big">+20%</div>
+        <div class="big-sub">online bookings in the first year after launch</div>
+        <div class="facts">
+          <div><b>10</b><span>people on the BA team I led</span></div>
+          <div><b>10+</b><span>business stakeholders</span></div>
+          <div><b>35+</b><span>sprints planned and groomed</span></div>
+          <div><b>12</b><span>releases, all on schedule</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="kicker"><span class="tag">Shipped · real users</span> · Consumer e-commerce · Japan Airlines</p>
+        <h3>Launching an airline e-commerce platform</h3>
+        <dl class="tldr">
+          <div><dt>Problem</dt><dd>Japan Airlines needed web and mobile booking apps for its domestic market, covering booking and everything after it.</dd></div>
+          <div><dt>My role</dt><dd>Led a 10-member BA team onsite in Tokyo, owning requirements, scope and releases end to end.</dd></div>
+          <div><dt>Outcome</dt><dd><b>+20% online bookings</b> in year one; 12 releases shipped on schedule.</dd></div>
+        </dl>
+        <div class="actions">
+          <details>
+            <summary>Read the full case study</summary>
+            <div class="cs">
+              <h4>Discovery</h4>
+              <p>Ran requirements workshops with 10+ business stakeholders and turned what I heard into BRDs, 300+ user stories and wireframes for the booking and post-booking journeys.</p>
+              <h4>Prioritisation</h4>
+              <p>Ranked features by business value against delivery effort, so each release carried the changes that mattered most to customers and the business.</p>
+              <h4>Platform decisions</h4>
+              <p>Designed API specifications for 40+ microservices across reservation systems and third-party services. Reusable REST/SOAP contracts drove 20% API reuse and cut duplicate integration work.</p>
+              <h4>Delivery</h4>
+              <p>Ran backlog grooming and sprint planning with development and QA teams across 35+ sprints and delivered 12 production releases on schedule. The whole team was there for the 2 a.m. go-live in 2024.</p>
+              <h4>What I learned</h4>
+              <p>How to own an outcome, not just a task list, while working across languages, cultures and a large group of stakeholders.</p>
+            </div>
+          </details>
+          <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
+          <a class="deck" href="" target="_blank" rel="noopener">View the full deck ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="platform-assistant">
+      <div class="visual" aria-label="How the assistant works">
+        <div class="v-label">How it works (from the PRD)</div>
+        <div class="flow">
+          <div class="node"><b>Knowledge sources</b><div class="srcs"><i>Jira</i><i>ServiceNow</i><i>Confluence</i><i>SharePoint</i><i>Vendor docs</i></div></div>
+          <div class="arrow">↓</div>
+          <div class="node"><b>Ingest + semantic chunking</b><span>keeps headings and version details with each step</span></div>
+          <div class="arrow">↓</div>
+          <div class="node"><b>Vector DB with access metadata</b><span>AD group and user ID stored on every chunk</span></div>
+          <div class="arrow">↓</div>
+          <div class="node"><b>Hybrid retrieval + re-ranking</b><span>keyword and semantic search, filtered by permission</span></div>
+          <div class="arrow">↓</div>
+          <div class="node key"><b>Answer with citations</b><span>root cause first, numbered steps, links to every source</span></div>
+        </div>
+        <p class="guard">Guardrails: never reveals secrets or tokens, answers only from sources the user can access, and says "I don't have a documented answer" instead of guessing.</p>
+      </div>
+      <div>
+        <p class="kicker"><span class="tag">Selected in Xoriant ideathon</span> · AI product · PRD</p>
+        <h3>RAG-Based Platform Assistant</h3>
+        <dl class="tldr">
+          <div><dt>Problem</dt><dd>Platform engineers lose an estimated 3–4 hours a week searching across Jira, ServiceNow, Confluence and vendor docs; incident investigations take 2–3 hours.</dd></div>
+          <div><dt>My role</dt><dd>Spotted the problem in my own team and wrote the PRD for an AI assistant to solve it.</dd></div>
+          <div><dt>Outcome</dt><dd>PRD complete; <b>selected in the company ideathon</b>.</dd></div>
+        </dl>
+        <div class="actions">
+          <details>
+            <summary>Read the full case study</summary>
+            <div class="cs">
+              <h4>Who it's for</h4>
+              <p>Platform engineers in regulated financial services, typically 5–10 years' experience, handling incidents, change requests, vulnerability fixes and end-of-life upgrades.</p>
+              <h4>What the PRD covers</h4>
+              <ul>
+                <li>The RAG architecture, from ingestion to cited answers</li>
+                <li>An evaluation set of real questions, including ones the assistant must refuse</li>
+                <li>Metrics: retrieval precision (from a 60% baseline), task success rate and time to resolution</li>
+                <li>Permissions enforced at query time, plus escalation rules</li>
+                <li>A phased launch with go/no-go targets, and a cost model of about $2.65 per user per month</li>
+              </ul>
+              <h4>Why it matters</h4>
+              <p>Every hour an engineer spends searching is an hour not spent fixing. Cutting a 2–3 hour investigation shortens incidents for every team that depends on the platform.</p>
+            </div>
+          </details>
+          <a class="deck" href="docs/platform-assistant-prd.pdf" target="_blank" rel="noopener">Read the full PRD (PDF) ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="infratrace">
+      <div class="visual" aria-label="How InfraTrace works">
+        <div class="v-label">How it works</div>
+        <div class="flow">
+          <div class="node"><b>1 · Engineer fixes an incident</b><span>commands and infrastructure changes are recorded as they happen</span></div>
+          <div class="arrow">↓</div>
+          <div class="node"><b>2 · Linked to the ticket</b><span>matched to the ServiceNow or Jira ticket being worked on</span></div>
+          <div class="arrow">↓</div>
+          <div class="node key"><b>3 · Resolution note written at closure</b><span>a reproducible fix the next engineer can follow</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="kicker"><span class="wip">In progress · Buildathon</span> · AI product · MVP</p>
+        <h3>InfraTrace</h3>
+        <dl class="tldr">
+          <div><dt>Problem</dt><dd>When an incident is fixed, the knowledge stays with the engineer who fixed it. The next person to hit the same issue has to track that engineer down.</dd></div>
+          <div><dt>My role</dt><dd>Building the MVP as my buildathon project in the HelloPM AI Product Management cohort.</dd></div>
+          <div><dt>Status</dt><dd>MVP in progress.</dd></div>
+        </dl>
+        <div class="actions">
+          <details>
+            <summary>Read more</summary>
+            <div class="cs">
+              <h4>Why I'm building it</h4>
+              <p>After running root cause analysis on 200+ incidents, I kept seeing the same fixes rediscovered from scratch. InfraTrace captures the fix while it happens, so the next engineer doesn't have to chase the first one.</p>
+              <p>I'll share the MVP and what I learned here once it's ready.</p>
+            </div>
+          </details>
+          <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
+          <a class="deck" href="" target="_blank" rel="noopener">View the full deck ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="zomato">
+      <div class="visual" aria-label="Zomato research findings">
+        <div class="v-label">What the research found (31 working professionals)</div>
+        <div class="bars">
+          <div class="bar-row"><div class="lbl"><span>Hygiene is a concern when ordering</span><b>90%</b></div><div class="bar"><i style="width:90%"></i></div></div>
+          <div class="bar-row"><div class="lbl"><span>Want reliable hygiene info most</span><b>52%</b></div><div class="bar"><i style="width:52%"></i></div></div>
+        </div>
+        <div class="funnel"><span>7 ideas</span>→<span>RICE</span>→<span class="key">Hygiene Score</span></div>
+      </div>
+      <div>
+        <p class="kicker"><span class="tag">Case study</span> · Consumer · User research</p>
+        <h3>Zomato: hygiene trust for working professionals</h3>
+        <dl class="tldr">
+          <div><dt>Problem</dt><dd>Working professionals hesitate to order from restaurants they don't know. Why?</dd></div>
+          <div><dt>My role</dt><dd>Solo case study: research, prioritisation, requirements and success metrics.</dd></div>
+          <div><dt>Outcome</dt><dd>Hygiene uncertainty is the <b>top barrier (28 of 31)</b>; designed a Verified Hygiene Score and Hygiene Review Summary.</dd></div>
+        </dl>
+        <div class="actions">
+          <details>
+            <summary>Read the full case study</summary>
+            <div class="cs">
+              <h4>Research</h4>
+              <p>Surveyed 31 working professionals and interviewed 2. 28 of 31 (90%) said hygiene was a concern when ordering, and 52% picked reliable hygiene information as the improvement they wanted most.</p>
+              <h4>Solution</h4>
+              <ul>
+                <li><b>Verified Hygiene Score</b> below the existing rating, shown only when enough verified information exists</li>
+                <li><b>Hygiene Review Summary</b> that opens on tap and says whether it's based on reviews, audits or both</li>
+              </ul>
+              <h4>Non-goal</h4>
+              <p>Not changing or replacing Zomato's existing rating and review system.</p>
+              <h4>Measuring success</h4>
+              <ul>
+                <li><b>Key metric:</b> order conversion after viewing hygiene information</li>
+                <li><b>Secondary:</b> hygiene information engagement rate on restaurant pages</li>
+                <li><b>Guardrail:</b> hygiene-related complaints per 1,000 orders</li>
+              </ul>
+            </div>
+          </details>
+          <a class="deck" href="docs/zomato-hygiene-case-study.pdf" target="_blank" rel="noopener">Read the full case study (PDF) ↗</a>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
 <section id="experience">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">02</span><h2>Experience</h2></div>
-    <p class="sec-sub">8+ years across airline e-commerce and fintech, including 6+ years onsite in Tokyo.</p>
-    <div class="timeline">
-      <div class="tl-item card">
-        <span class="date">Dec 2024 – Present</span>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Experience</h2>
+      <p>8+ years across airline e-commerce and fintech, including 6+ years onsite in Tokyo.</p>
+    </div>
+
+    <div class="role">
+      <p class="when"><b>Xoriant</b>Pune · Dec 2024 – Present</p>
+      <div>
         <h3>Platform Owner, CI/CD &amp; DevOps Tooling</h3>
-        <p class="meta">Xoriant Solutions · Pune</p>
         <ul>
-          <li>Drove the Jenkins OSS to CloudBees CI migration for 100+ developers across 5+ teams: gathered requirements, defined the onboarding model and phased the rollout. All 30+ pipelines migrated in 2 months.</li>
-          <li>Cut weekly tool outages by ~70% by running root cause analysis on 200+ incidents and fixing the recurring infrastructure gaps disrupting developers across 6 fintech teams.</li>
-          <li>Automated upgrades and patching across 8+ DevOps tools, making patch cycles 60% faster, saving 3 hours of manual effort per cycle and removing planned downtime for 100+ developers.</li>
-          <li>Identified 2–3 hour incident investigations as a productivity drain and proposed a RAG-based Platform Assistant (PRD complete), selected in the company ideathon.</li>
-          <li>Own day-to-day operation of 8+ enterprise DevOps tools and Docker-based deployments for 50+ microservices on AWS, handling 50+ support requests a month.</li>
+          <li>Ran the CI/CD platform as a product for 6 fintech teams: treated developers as users, used their 50+ support requests a month to decide what to fix next, and owned 8+ tools and 50+ microservice deployments on AWS.</li>
+          <li>Drove the Jenkins OSS to CloudBees CI migration for 100+ developers across 5+ teams: gathered requirements, designed the onboarding model and phased the rollout by team. All 30+ pipelines moved in 2 months.</li>
+          <li>Cut weekly tool outages by ~70% by finding the root cause of 200+ incidents and fixing the recurring gaps behind them.</li>
+          <li>Automated upgrades and patching across 8+ tools: patch cycles 60% faster, 3 hours of manual work saved per cycle, and no planned downtime for developers.</li>
+          <li>Identified 2–3 hour incident investigations as a productivity drain and proposed an AI assistant to fix it (<a href="#platform-assistant">PRD</a>), selected in the company ideathon.</li>
         </ul>
-        <div class="chips"><span class="chip">100+ developers onboarded</span><span class="chip">~70% fewer outages</span><span class="chip">60% faster patching</span><span class="chip">Ideathon selection</span></div>
       </div>
-      <div class="tl-item card">
-        <span class="date">Oct 2019 – Nov 2024</span>
+    </div>
+
+    <div class="role">
+      <p class="when"><b>Tata Consultancy Services</b>Tokyo, onsite for Japan Airlines · Oct 2019 – Nov 2024</p>
+      <div>
         <h3>Senior Business Analyst, Airline</h3>
-        <p class="meta">Tata Consultancy Services · Tokyo, Japan (onsite for Japan Airlines)</p>
         <ul>
-          <li>Led a 10-member BA team to deliver airline e-commerce web and mobile apps for the domestic market, owning requirements, scope and releases end to end. Online bookings grew 20% in year one.</li>
-          <li>Ran requirements workshops with 10+ business stakeholders, prioritised features by business value and delivery effort, and turned them into BRDs, user stories and wireframes for the booking and post-booking platform.</li>
-          <li>Designed API specifications for 40+ microservices across reservation and third-party systems; reusable REST/SOAP contracts drove 20% API reuse.</li>
-          <li>Managed backlog grooming and sprint planning across 35+ sprints, delivering 12 production releases on schedule.</li>
+          <li>Led a 10-member BA team to deliver the domestic e-commerce web and mobile apps, owning requirements, scope and releases end to end. Online bookings grew 20% in year one (<a href="#airline-ecommerce">case study</a>).</li>
+          <li>Ran workshops with 10+ business stakeholders, prioritised by business value and delivery effort, and wrote 300+ user stories, BRDs and wireframes for booking and post-booking.</li>
+          <li>Designed API specifications for 40+ microservices; reusable REST/SOAP contracts drove 20% API reuse.</li>
+          <li>Ran backlog grooming and sprint planning across 35+ sprints, delivering 12 production releases on schedule.</li>
         </ul>
-        <div class="chips"><span class="chip">+20% online bookings</span><span class="chip">300+ user stories</span><span class="chip">12 releases</span><span class="chip">40+ microservice APIs</span></div>
       </div>
-      <div class="tl-item card">
-        <span class="date">Oct 2018 – Sep 2019</span>
+    </div>
+
+    <div class="role">
+      <p class="when"><b>Tata Consultancy Services</b>Tokyo, onsite for Japan Airlines · Oct 2018 – Sep 2019</p>
+      <div>
         <h3>QA Analyst</h3>
-        <p class="meta">Tata Consultancy Services · Tokyo, Japan (onsite for Japan Airlines)</p>
         <ul>
-          <li>Contributed to the Self Bag Drop rollout for Japan Airlines' domestic market: interviewed passengers on site to find usability issues and worked with cross-functional teams to fix them, reducing bag check-in time to 40 seconds.</li>
-          <li>Validated change requests across airline departure control system modules and supported interline testing with partner airlines.</li>
+          <li>Worked on the Self Bag Drop rollout for Japan Airlines' domestic flights: interviewed passengers on site to find usability problems and worked with cross-functional teams to fix them, bringing bag check-in down to 40 seconds.</li>
+          <li>Validated change requests across departure control system modules and supported interline testing with partner airlines.</li>
         </ul>
-        <p class="proof">Proof: JAL press release, 20 Feb 2020, on JAL's first domestic Self Baggage Drop units at Haneda (<a href="https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">Japanese original ↗</a> · <a href="https://translate.google.com/translate?sl=ja&amp;tl=en&amp;u=https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">English translation ↗</a>)</p>
-        <div class="chips"><span class="chip">Self Bag Drop</span><span class="chip">User research</span><span class="chip">Japan Airlines</span></div>
+        <p class="proof"><b>Proof:</b> JAL press release, 20 Feb 2020, on its first domestic Self Baggage Drop units at Haneda (<a href="https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">Japanese original ↗</a> · <a href="https://translate.google.com/translate?sl=ja&amp;tl=en&amp;u=https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">English translation ↗</a>) · <a href="#story-photo">Photos ↓</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Journey is hidden for now (to be revamped). Remove the "hidden" attribute below to show it again. -->
-<section id="journey" hidden>
-  <div class="wrap reveal">
-    <div class="sec-head"><h2>How I got here</h2></div>
-    <p class="sec-sub">From my first job at TCS to six years onsite in Tokyo, into platform engineering, and now AI product management. Each move taught me something I use as a PM.</p>
-    <div class="journey">
-
-      <div class="step">
-        <div class="dot">1</div>
-        <span class="stage">Start · First company</span>
-        <h3>Joining TCS</h3>
-        <span class="when">2018 · Tata Consultancy Services</span>
-        <p>Joined Tata Consultancy Services as my first company, straight after a mechanical engineering degree, and learned software from scratch through its Initial Learning Program (ILP).</p>
-        <figure class="shot ph"><img src="images/journey-1.jpg" alt="Joining TCS, my first company" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-1.png'}"></figure>
-        <div class="win"><b>What it taught me:</b> I can pick up a new field fast.</div>
-      </div>
-
-      <div class="step">
-        <div class="dot">2</div>
-        <span class="stage">Chennai</span>
-        <h3>Starting out in Chennai</h3>
-        <span class="when">2018 · Chennai</span>
-        <p>Began my first assignment in Chennai and got my first hands-on experience of how enterprise software is delivered.</p>
-        <figure class="shot ph"><img src="images/journey-2.jpg" alt="Working in Chennai" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-2.png'}"></figure>
-        <div class="win"><b>What it taught me:</b> How real projects run, beyond the classroom.</div>
-      </div>
-
-      <div class="step">
-        <div class="dot">3</div>
-        <span class="stage">Onsite · Tokyo, Japan</span>
-        <h3>An onsite opportunity in Tokyo</h3>
-        <span class="when">Oct 2018 · Tokyo, Japan</span>
-        <p>Got the opportunity to work onsite in Tokyo, side by side with the client, Japan Airlines. I spent the next 6+ years there.</p>
-        <figure class="shot ph"><img src="images/journey-3.jpg" alt="Onsite in Tokyo, Japan" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-3.png'}"></figure>
-        <div class="win"><b>What it taught me:</b> Working inside the client's world, across language and culture, changes how you understand users.</div>
-      </div>
-
-      <div class="step">
-        <div class="dot">4</div>
-        <span class="stage">Tokyo · Two projects</span>
-        <h3>Self Bag Drop and airline e-commerce</h3>
-        <span class="when">2018 – 2024 · Japan Airlines, Tokyo</span>
-        <div class="subs">
-          <div class="sub"><h4>Self Bag Drop</h4><span class="when">2018 – 2019 · QA Analyst</span><p>Interviewed passengers at the airport to find usability problems in the new Self Bag Drop and worked with cross-functional teams to fix them. Bag check-in time dropped to 40 seconds.</p><p class="proof"><b>Proof:</b> JAL press release, 20 Feb 2020: JAL's first Self Baggage Drop units for domestic flights go live at Haneda (<a href="https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">Japanese original ↗</a> · <a href="https://translate.google.com/translate?sl=ja&amp;tl=en&amp;u=https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">English translation ↗</a>). Also covered by <a href="https://www.passengerterminaltoday.com/?p=21448" target="_blank" rel="noopener">Passenger Terminal Today ↗</a>.</p></div>
-          <div class="sub"><h4>Airline e-commerce platform</h4><span class="when">2019 – 2024 · Senior Business Analyst</span><p>Led a 10-member team from requirements to launch of the web and mobile booking apps. Online bookings grew 20% in year one. <a href="#airline-ecommerce">Read the case study ↑</a></p></div>
-        </div>
-        <figure class="shot wide ph"><img src="images/journey-4.jpg" alt="Self Bag Drop for JAL domestic flights at Haneda, 2019: the kiosk, on-site commissioning, error-handling tests and the bag drop unit" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-4.png'}"><figcaption>Self Bag Drop for Japan Airlines' domestic terminal at Haneda: kiosk build, on-site commissioning and testing in 2019, ahead of the February 2020 launch (<a href="https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">JAL press release ↗</a>).</figcaption></figure>
-        <div class="win"><b>What it taught me:</b> Watching real users beats any spec, and owning an outcome means owning it end to end.</div>
-      </div>
-
-      <div class="step">
-        <div class="dot">5</div>
-        <span class="stage">Switch · DevOps</span>
-        <h3>Learning DevOps and joining Xoriant</h3>
-        <span class="when">Dec 2024 – Present · Xoriant, Pune</span>
-        <p>I always had a technical side, so I learned DevOps engineering (AWS Solutions Architect in 2023, Terraform in 2024) and looked for the right opportunity, joining Xoriant in Pune as a Senior Platform Engineer. There I led the migration to CloudBees CI, with 100+ developers adopting it in 2 months, and cut weekly tool outages by ~70%. Received the Star Team Member award in 2025. Alongside, I joined the World Bank-funded RAMP programme's State Project Implementation Unit as a passion project.</p>
-        <figure class="shot ph"><img src="images/journey-5.jpg" alt="Receiving the Star Team Member award at Xoriant, 2025" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-5.png'}"><figcaption>Receiving the Star Team Member award at Xoriant, 2025</figcaption></figure>
-        <div class="win"><b>What it taught me:</b> Internal tools are products too. Adoption depends on onboarding and trust.</div>
-      </div>
-
-      <div class="step pm">
-        <div class="dot">★</div>
-        <span class="stage">Next · AI product management</span>
-        <h3>Exploring AI product management</h3>
-        <span class="when">Now · HelloPM AI Product Management cohort</span>
-        <p>Joined the HelloPM AI Product Management cohort to explore AI product management in depth, and I'm building InfraTrace as my buildathon project. Every stage pulled me closer to product: watching passengers at the airport, owning a launch, getting 100+ developers to adopt a new platform. Now I'm looking for an AI product management role where I can do this full-time.</p>
-        <figure class="shot ph"><img src="images/journey-6.jpg" alt="HelloPM AI Product Management cohort" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-6.png'}"></figure>
-      </div>
-
+<section id="story" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Why product, why AI, why now</h2>
     </div>
+    <p class="why">Every step of my career pulled me closer to product: interviewing passengers at the airport, owning an airline launch, getting 100+ developers to adopt a new platform. Today I watch engineers lose hours to problems AI can now solve, so I'm building those products and looking for a role where I can do it full-time.</p>
+
+    <ol class="steps">
+      <li><span class="yr">2018</span><b>Joined TCS</b><span>My first company. Learned software from scratch in the ILP.</span></li>
+      <li><span class="yr">2018</span><b>Chennai</b><span>First assignment; how enterprise software gets delivered.</span></li>
+      <li><span class="yr">Oct 2018</span><b>Onsite in Tokyo</b><span>Six years side by side with Japan Airlines.</span></li>
+      <li><span class="yr">2018 – 2024</span><b>Two launches</b><span>Self Bag Drop, then led the e-commerce launch.</span></li>
+      <li><span class="yr">Dec 2024</span><b>Platforms in Pune</b><span>Learned DevOps; now own the CI/CD platform at Xoriant.</span></li>
+      <li class="current"><span class="yr">Now</span><b>AI product management</b><span>HelloPM AI PM cohort; building InfraTrace.</span></li>
+    </ol>
+
+    <figure class="story-photo" id="story-photo">
+      <img src="images/journey-4.jpg" alt="Self Bag Drop for JAL domestic flights at Haneda, 2019: the kiosk, on-site commissioning, error-handling tests and the bag drop unit" width="1600" height="1000">
+      <figcaption>Tokyo, 2019: building, commissioning and testing the Self Bag Drop for Japan Airlines' domestic terminal at Haneda, ahead of its February 2020 launch (<a href="https://press.jal.co.jp/ja/release/202002/005494.html" target="_blank" rel="noopener">JAL press release ↗</a>).</figcaption>
+    </figure>
   </div>
 </section>
 
 <section id="about">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">03</span><h2>About</h2></div>
-    <div class="grid2">
-      <div class="card">
-        <h3>Product</h3>
-        <div class="chips"><span class="chip">PRD writing</span><span class="chip">Discovery &amp; user research</span><span class="chip">Prioritisation (RICE)</span><span class="chip">Product metrics</span><span class="chip">Backlog management</span><span class="chip">Stakeholder management</span><span class="chip">Requirements gathering</span><span class="chip">Wireframing</span><span class="chip">Competitor analysis</span><span class="chip">Agile / Scrum</span></div>
-        <h4>AI</h4>
-        <div class="chips"><span class="chip">RAG</span><span class="chip">AI evaluation sets</span><span class="chip">AI guardrails</span></div>
-        <h4>Analytics</h4>
-        <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Spreadsheets</span><span class="chip">Google Analytics</span><span class="chip">Mixpanel</span></div>
-        <p class="tools"><b>Tools:</b> Jira, Confluence, ServiceNow, Postman, REST/SOAP APIs, AWS, Docker</p>
+  <div class="wrap">
+    <div class="sec-head"><h2>About</h2></div>
+    <div class="about">
+      <div>
+        <h3>Product &amp; AI</h3>
+        <p>PRD writing, discovery and user research, prioritisation (RICE, value vs effort), product metrics, backlog management, stakeholder management, wireframing, Agile / Scrum. RAG systems, AI evaluation sets and guardrails.</p>
+        <h3 style="margin-top:20px">Analytics &amp; tools</h3>
+        <p>SQL, Python, spreadsheets, Google Analytics, Mixpanel. Jira, Confluence, ServiceNow, Postman, REST/SOAP APIs, AWS, Docker.</p>
       </div>
-      <div class="card">
+      <div>
         <h3>Certifications</h3>
-        <ul class="plain">
+        <ul>
           <li><b>AI Product Management</b> · HelloPM</li>
           <li><b>AWS Certified Solutions Architect – Associate</b> · 2023</li>
           <li><b>HashiCorp Certified: Terraform Associate</b> · 2024</li>
         </ul>
-        <h3 style="margin-top:22px">Education</h3>
-        <ul class="plain">
-          <li><b>Bachelor of Engineering, Mechanical</b> · North Maharashtra University · 2015 – 2018</li>
+      </div>
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><b>Bachelor of Engineering, Mechanical</b><br>North Maharashtra University · 2015 – 2018</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">04</span><h2>Let's talk</h2></div>
-    <p class="sec-sub"><b>Looking for:</b> Technical, AI or Platform Product Manager roles. Happy to chat about the work above, or product in general.</p>
-    <div class="contact-row">
-      <a class="btn primary" href="mailto:khandelwalshubham1996@gmail.com">✉ khandelwalshubham1996@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">LinkedIn · in/srk10</a>
+<section id="contact" class="band contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Looking for Technical, AI or Platform Product Manager roles. Happy to walk you through any of the work above.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:khandelwalshubham1996@gmail.com">khandelwalshubham1996@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>
 
-<footer>© <span id="yr"></span> Shubham Khandelwal</footer>
-<a id="top" class="btn" href="#home" aria-label="Back to top">↑</a>
+<footer><div class="wrap">© <span id="yr">2026</span> Shubham Khandelwal</div></footer>
 
 <script>
-  const links=document.getElementById('links');
-  document.getElementById('menu').onclick=()=>links.classList.toggle('open');
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-
-  if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));}
-  else{
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.05});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  }
+{
+  const links=document.getElementById('links'), menu=document.getElementById('menu');
+  menu.addEventListener('click',()=>{const o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o);});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
 
   // Deep links from the CV (e.g. #zomato) open that case study
-  function openFromHash(){
-    const el=location.hash&&document.querySelector(location.hash);
-    if(el&&el.classList.contains('case')){const d=el.querySelector('details');if(d)d.open=true;el.closest('.reveal')?.classList.add('in');}
-  }
-  openFromHash();addEventListener('hashchange',openFromHash);
+  const openFromHash=()=>{
+    const id=location.hash.slice(1); if(!id) return;
+    const el=document.getElementById(id);
+    if(el&&el.classList.contains('case')){const d=el.querySelector('details');if(d)d.open=true;}
+  };
+  openFromHash(); addEventListener('hashchange',openFromHash);
 
-  const secs=[...document.querySelectorAll('section[id]:not([hidden])')];
-  const navLinks=[...links.querySelectorAll('a')];
-  const topBtn=document.getElementById('top');
-  addEventListener('scroll',()=>{
-    topBtn.classList.toggle('show',scrollY>600);
-    let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id;});
+  // Highlight the section in view
+  const secs=[...document.querySelectorAll('section[id]')];
+  const navLinks=[...links.querySelectorAll('a[href^="#"]')];
+  const onScroll=()=>{
+    let cur=''; secs.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id;});
     navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
-  });
+  };
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
   document.getElementById('yr').textContent=new Date().getFullYear();
+}
 </script>
 </body>
 </html>
