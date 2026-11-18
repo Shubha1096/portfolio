@@ -150,6 +150,11 @@
   ul.plain b{color:var(--text)}
   .contact-row{display:flex;flex-wrap:wrap;gap:12px}
   .sec-sub b{color:var(--text)}
+  .deck{display:inline-flex;align-items:center;margin-top:10px;padding:10px 18px;border-radius:10px;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff!important;min-height:44px}
+  .deck:hover{text-decoration:none;transform:translateY(-1px)}
+  .deck[href=""],.deck:not([href]){display:none}
+  .shot img{aspect-ratio:auto;max-height:420px}
+  .shot.ph{display:none}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -193,6 +198,7 @@
       <div class="stat"><b>+20%</b><span>online bookings in the first year after launch</span></div>
       <div class="stat"><b>100+</b><span>developers adopted the new CI/CD platform in 2 months</span></div>
       <div class="stat"><b>~70%</b><span>fewer weekly tool outages for 6 fintech teams</span></div>
+      <div class="stat"><b>300+</b><span>user stories written and delivered</span></div>
       <div class="stat"><b>6+ yrs</b><span>onsite in Tokyo, working side by side with the client</span></div>
     </div>
   </div>
@@ -230,6 +236,8 @@
             <p>How to own an outcome, not just a task list, while working across languages, cultures and a large group of stakeholders.</p>
           </div>
         </details>
+        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
+        <a class="deck" href="" target="_blank" rel="noopener">View the full deck →</a>
       </article>
 
       <article class="case" id="platform-assistant">
@@ -258,6 +266,8 @@
             <p>Every hour an engineer spends searching is an hour not spent fixing. Cutting a 2–3 hour investigation shortens incidents for every team that depends on the platform.</p>
           </div>
         </details>
+        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
+        <a class="deck" href="" target="_blank" rel="noopener">View the full deck →</a>
       </article>
 
       <article class="case" id="infratrace">
@@ -282,6 +292,8 @@
             <p class="meta">I'll share the MVP and what I learned here once it's ready.</p>
           </div>
         </details>
+        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
+        <a class="deck" href="" target="_blank" rel="noopener">View the full deck →</a>
       </article>
 
       <article class="case" id="zomato">
@@ -308,6 +320,8 @@
             <p>Defined success metrics for the prototype so the idea could be tested, not just shipped.</p>
           </div>
         </details>
+        <!-- Paste the PPT / slide deck link for this project between the quotes in href="" -->
+        <a class="deck" href="" target="_blank" rel="noopener">View the full deck →</a>
       </article>
 
     </div>
@@ -326,6 +340,7 @@
         <h3>Learning software from scratch</h3>
         <span class="when">2018 · TCS</span>
         <p>Joined TCS after a mechanical engineering degree, learned software through its Initial Learning Program (ILP), then worked in Chennai and Pune before moving onsite to Tokyo.</p>
+        <figure class="shot ph"><img src="images/journey-1.jpg" alt="Start of my career at TCS" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-1.png'}"></figure>
         <div class="win"><b>What it taught me:</b> I can pick up a new field fast.</div>
       </div>
 
@@ -335,6 +350,7 @@
         <h3>Self Bag Drop for Japan Airlines</h3>
         <span class="when">2018 – 2019 · QA Analyst, onsite at the client</span>
         <p>Interviewed passengers at the airport to find usability problems in the new Self Bag Drop and worked with cross-functional teams to fix them. Bag check-in time dropped to 40 seconds.</p>
+        <figure class="shot ph"><img src="images/journey-2.jpg" alt="Self Bag Drop at the airport" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-2.png'}"></figure>
         <div class="win"><b>What it taught me:</b> Watching real users beats any spec.</div>
       </div>
 
@@ -344,6 +360,7 @@
         <h3>Leading the airline e-commerce launch</h3>
         <span class="when">2019 – 2024 · Senior Business Analyst, onsite at the client</span>
         <p>Led a 10-member team from requirements to launch. Online bookings grew 20% in year one. <a href="#airline-ecommerce">Read the case study ↑</a></p>
+        <figure class="shot ph"><img src="images/journey-3.jpg" alt="Airline e-commerce go-live" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-3.png'}"></figure>
         <div class="win"><b>What it taught me:</b> How to own an outcome, end to end.</div>
       </div>
 
@@ -353,6 +370,7 @@
         <h3>Running an internal platform like a product</h3>
         <span class="when">Dec 2024 – Present · Platform Owner, Xoriant</span>
         <p>Learned DevOps (AWS Solutions Architect in 2023, Terraform in 2024) and moved to Pune to own the CI/CD platform for 6 fintech teams. Led the migration to CloudBees CI, with 100+ developers adopting it in 2 months, and cut weekly tool outages by ~70%. Received the Star Team Member award in 2025. Alongside, I joined the World Bank-funded RAMP programme's State Project Implementation Unit as a passion project.</p>
+        <figure class="shot ph"><img src="images/journey-4.jpg" alt="Platform work at Xoriant" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-4.png'}"></figure>
         <div class="win"><b>What it taught me:</b> Internal tools are products too. Adoption depends on onboarding and trust.</div>
       </div>
 
@@ -362,6 +380,7 @@
         <h3>Why product, why AI, why now</h3>
         <span class="when">Now</span>
         <p>Every stage pulled me closer to product: watching passengers at the airport, owning a launch, getting 100+ developers to adopt a new platform. In my current role I see engineers lose hours to problems AI can now solve, so I'm building those products (the Platform Assistant and InfraTrace) and looking for a Technical, AI or Platform PM role to do it full-time.</p>
+        <figure class="shot ph"><img src="images/journey-5.jpg" alt="Building AI products" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-5.png'}"></figure>
       </div>
 
     </div>
@@ -385,19 +404,12 @@
         <h3>Certifications</h3>
         <ul class="plain">
           <li><b>AI Product Management</b> · HelloPM</li>
-          <li><b>Professional Scrum Product Owner (PSPO-I)</b></li>
-          <li><b>Anthropic AI Practitioner</b></li>
           <li><b>AWS Certified Solutions Architect – Associate</b> · 2023</li>
           <li><b>HashiCorp Certified: Terraform Associate</b> · 2024</li>
         </ul>
         <h3 style="margin-top:22px">Education</h3>
         <ul class="plain">
           <li><b>Bachelor of Engineering, Mechanical</b> · North Maharashtra University · 2015 – 2018</li>
-        </ul>
-        <h3 style="margin-top:22px">Recognition</h3>
-        <ul class="plain">
-          <li><b>Star Team Member award</b> · Xoriant · 2025</li>
-          <li><b>Ideathon selection</b> · RAG-Based Platform Assistant</li>
         </ul>
       </div>
     </div>
@@ -411,8 +423,6 @@
     <div class="contact-row">
       <a class="btn primary" href="mailto:khandelwalshubham1996@gmail.com">✉ khandelwalshubham1996@gmail.com</a>
       <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">LinkedIn · in/srk10</a>
-      <a class="btn" href="tel:+918087286475">+91 80872 86475</a>
-      <a class="btn" href="https://github.com/Shubha1096" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>
