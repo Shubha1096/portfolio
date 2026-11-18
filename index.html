@@ -155,6 +155,10 @@
   .deck[href=""],.deck:not([href]){display:none}
   .shot img{aspect-ratio:auto;max-height:420px}
   .shot.ph{display:none}
+  .subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;margin-top:12px}
+  .sub{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .sub h4{font-size:1rem;margin:0 0 2px}
+  .sub p{margin-top:8px;font-size:.94rem}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -335,56 +339,69 @@
 <section id="journey">
   <div class="wrap reveal">
     <div class="sec-head"><span class="num">02</span><h2>How I got here</h2></div>
-    <p class="sec-sub">From mechanical engineering to delivering airline products onsite in Tokyo, then platforms, and now product. Each move taught me something I use as a PM.</p>
+    <p class="sec-sub">From my first job at TCS to six years onsite in Tokyo, into platform engineering, and now AI product management. Each move taught me something I use as a PM.</p>
     <div class="journey">
 
       <div class="step">
         <div class="dot">1</div>
-        <span class="stage">Start · ILP → Chennai → Pune</span>
-        <h3>Learning software from scratch</h3>
-        <span class="when">2018 · TCS</span>
-        <p>Joined TCS after a mechanical engineering degree, learned software through its Initial Learning Program (ILP), then worked in Chennai and Pune before moving onsite to Tokyo.</p>
-        <figure class="shot ph"><img src="images/journey-1.jpg" alt="Start of my career at TCS" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-1.png'}"></figure>
+        <span class="stage">Start · First company</span>
+        <h3>Joining TCS</h3>
+        <span class="when">2018 · Tata Consultancy Services</span>
+        <p>Joined Tata Consultancy Services as my first company, straight after a mechanical engineering degree, and learned software from scratch through its Initial Learning Program (ILP).</p>
+        <figure class="shot ph"><img src="images/journey-1.jpg" alt="Joining TCS, my first company" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-1.png'}"></figure>
         <div class="win"><b>What it taught me:</b> I can pick up a new field fast.</div>
       </div>
 
       <div class="step">
         <div class="dot">2</div>
-        <span class="stage">Tokyo · Project 1</span>
-        <h3>Self Bag Drop for Japan Airlines</h3>
-        <span class="when">2018 – 2019 · QA Analyst, onsite at the client</span>
-        <p>Interviewed passengers at the airport to find usability problems in the new Self Bag Drop and worked with cross-functional teams to fix them. Bag check-in time dropped to 40 seconds.</p>
-        <figure class="shot ph"><img src="images/journey-2.jpg" alt="Self Bag Drop at the airport" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-2.png'}"></figure>
-        <div class="win"><b>What it taught me:</b> Watching real users beats any spec.</div>
+        <span class="stage">Chennai</span>
+        <h3>Starting out in Chennai</h3>
+        <span class="when">2018 · Chennai</span>
+        <p>Began my first assignment in Chennai and got my first hands-on experience of how enterprise software is delivered.</p>
+        <figure class="shot ph"><img src="images/journey-2.jpg" alt="Working in Chennai" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-2.png'}"></figure>
+        <div class="win"><b>What it taught me:</b> How real projects run, beyond the classroom.</div>
       </div>
 
       <div class="step">
         <div class="dot">3</div>
-        <span class="stage">Tokyo · Project 2</span>
-        <h3>Leading the airline e-commerce launch</h3>
-        <span class="when">2019 – 2024 · Senior Business Analyst, onsite at the client</span>
-        <p>Led a 10-member team from requirements to launch. Online bookings grew 20% in year one. <a href="#airline-ecommerce">Read the case study ↑</a></p>
-        <figure class="shot ph"><img src="images/journey-3.jpg" alt="Airline e-commerce go-live" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-3.png'}"></figure>
-        <div class="win"><b>What it taught me:</b> How to own an outcome, end to end.</div>
+        <span class="stage">Onsite · Tokyo, Japan</span>
+        <h3>An onsite opportunity in Tokyo</h3>
+        <span class="when">Oct 2018 · Tokyo, Japan</span>
+        <p>Got the opportunity to work onsite in Tokyo, side by side with the client, Japan Airlines. I spent the next 6+ years there.</p>
+        <figure class="shot ph"><img src="images/journey-3.jpg" alt="Onsite in Tokyo, Japan" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-3.png'}"></figure>
+        <div class="win"><b>What it taught me:</b> Working inside the client's world, across language and culture, changes how you understand users.</div>
       </div>
 
       <div class="step">
         <div class="dot">4</div>
-        <span class="stage">Switch · Platforms in Pune</span>
-        <h3>Running an internal platform like a product</h3>
-        <span class="when">Dec 2024 – Present · Platform Owner, Xoriant</span>
-        <p>Learned DevOps (AWS Solutions Architect in 2023, Terraform in 2024) and moved to Pune to own the CI/CD platform for 6 fintech teams. Led the migration to CloudBees CI, with 100+ developers adopting it in 2 months, and cut weekly tool outages by ~70%. Received the Star Team Member award in 2025. Alongside, I joined the World Bank-funded RAMP programme's State Project Implementation Unit as a passion project.</p>
-        <figure class="shot ph"><img src="images/journey-4.jpg" alt="Platform work at Xoriant" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-4.png'}"></figure>
+        <span class="stage">Tokyo · Two projects</span>
+        <h3>Self Bag Drop and airline e-commerce</h3>
+        <span class="when">2018 – 2024 · Japan Airlines, Tokyo</span>
+        <div class="subs">
+          <div class="sub"><h4>Self Bag Drop</h4><span class="when">2018 – 2019 · QA Analyst</span><p>Interviewed passengers at the airport to find usability problems in the new Self Bag Drop and worked with cross-functional teams to fix them. Bag check-in time dropped to 40 seconds.</p></div>
+          <div class="sub"><h4>Airline e-commerce platform</h4><span class="when">2019 – 2024 · Senior Business Analyst</span><p>Led a 10-member team from requirements to launch of the web and mobile booking apps. Online bookings grew 20% in year one. <a href="#airline-ecommerce">Read the case study ↑</a></p></div>
+        </div>
+        <figure class="shot ph"><img src="images/journey-4.jpg" alt="Self Bag Drop and airline e-commerce projects in Tokyo" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-4.png'}"></figure>
+        <div class="win"><b>What it taught me:</b> Watching real users beats any spec, and owning an outcome means owning it end to end.</div>
+      </div>
+
+      <div class="step">
+        <div class="dot">5</div>
+        <span class="stage">Switch · DevOps</span>
+        <h3>Learning DevOps and joining Xoriant</h3>
+        <span class="when">Dec 2024 – Present · Xoriant, Pune</span>
+        <p>I always had a technical side, so I learned DevOps engineering (AWS Solutions Architect in 2023, Terraform in 2024) and looked for the right opportunity, joining Xoriant in Pune as a Senior Platform Engineer. There I led the migration to CloudBees CI, with 100+ developers adopting it in 2 months, and cut weekly tool outages by ~70%. Received the Star Team Member award in 2025. Alongside, I joined the World Bank-funded RAMP programme's State Project Implementation Unit as a passion project.</p>
+        <figure class="shot ph"><img src="images/journey-5.jpg" alt="Platform engineering at Xoriant" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-5.png'}"></figure>
         <div class="win"><b>What it taught me:</b> Internal tools are products too. Adoption depends on onboarding and trust.</div>
       </div>
 
       <div class="step pm">
         <div class="dot">★</div>
-        <span class="stage">Next · Product</span>
-        <h3>Why product, why AI, why now</h3>
-        <span class="when">Now</span>
-        <p>Every stage pulled me closer to product: watching passengers at the airport, owning a launch, getting 100+ developers to adopt a new platform. In my current role I see engineers lose hours to problems AI can now solve, so I'm building those products (the Platform Assistant and InfraTrace) and looking for a Technical, AI or Platform PM role to do it full-time.</p>
-        <figure class="shot ph"><img src="images/journey-5.jpg" alt="Building AI products" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-5.png'}"></figure>
+        <span class="stage">Next · AI product management</span>
+        <h3>Exploring AI product management</h3>
+        <span class="when">Now · HelloPM AI Product Management cohort</span>
+        <p>Joined the HelloPM AI Product Management cohort to explore AI product management in depth, and I'm building InfraTrace as my buildathon project. Every stage pulled me closer to product: watching passengers at the airport, owning a launch, getting 100+ developers to adopt a new platform. Now I'm looking for an AI product management role where I can do this full-time.</p>
+        <figure class="shot ph"><img src="images/journey-6.jpg" alt="HelloPM AI Product Management cohort" onload="this.parentElement.classList.remove('ph')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/journey-6.png'}"></figure>
       </div>
 
     </div>
