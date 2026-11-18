@@ -177,6 +177,10 @@ section.band{background:var(--band)}
   .steps li{padding:0 0 22px 22px}
   .steps li::before{top:4px;left:-7px}
 }
+.thumb{display:block;margin-top:12px;max-width:220px;color:var(--muted)}
+.thumb img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.thumb small{display:block;font-size:.78rem;margin-top:4px}
+.thumb:hover{text-decoration:none}.thumb:hover img{border-color:var(--accent)}
 .story-photo{margin-top:44px}
 .story-photo img{display:block;width:100%;height:auto;border-radius:14px}
 .story-photo figcaption{font-size:.9rem;color:var(--muted);margin-top:10px;max-width:80ch}
@@ -476,8 +480,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-si
 
     <ol class="steps">
       <li><span class="yr">2018</span><b>Joined TCS</b><span>My first company. Learned software from scratch in the ILP.</span></li>
-      <li><span class="yr">2018</span><b>Chennai</b><span>First assignment; how enterprise software gets delivered.</span></li>
-      <li><span class="yr">Oct 2018</span><b>Onsite in Tokyo</b><span>Six years side by side with Japan Airlines.</span></li>
+      <li><span class="yr">2018</span><b>Chennai</b><span>First assignment; how enterprise software gets delivered.</span><a class="thumb" href="images/story-chennai.jpg" target="_blank" rel="noopener" title="Open photo"><img src="images/story-chennai.jpg" alt="With the team in Chennai" loading="lazy"><small>The team in Chennai</small></a></li>
+      <li><span class="yr">Oct 2018</span><b>Onsite in Tokyo</b><span>Six years side by side with Japan Airlines.</span><a class="thumb" href="images/story-tokyo.jpg" target="_blank" rel="noopener" title="Open photo"><img src="images/story-tokyo.jpg" alt="Early days in Tokyo, at Asakusa" loading="lazy"><small>Early days in Tokyo</small></a></li>
       <li><span class="yr">2018 – 2024</span><b>Two launches</b><span>Self Bag Drop, then led the e-commerce launch.</span></li>
       <li><span class="yr">Dec 2024</span><b>Platforms in Pune</b><span>Learned DevOps; now own the CI/CD platform at Xoriant.</span></li>
       <li class="current"><span class="yr">Now</span><b>AI product management</b><span>HelloPM AI PM cohort; building InfraTrace.</span></li>
