@@ -1,7 +1,10 @@
-name: Refresh resume PDF
+name: Refresh resume PDFs
 
-# Re-exports the Google Doc CV to resume.pdf so the site's "View resume"
-# button always shows a recent version. Edit the Google Doc as usual.
+# Re-exports both Google Doc CVs to PDF so the site's résumé buttons always
+# show a recent version. Edit the Google Docs as usual.
+#   resume.pdf        <- Product / AI PM CV
+#   resume-devops.pdf <- Platform / DevOps CV
+# Each doc must be shared as "Anyone with the link can view".
 on:
   schedule:
     - cron: "*/30 * * * *"
@@ -15,45 +18,51 @@ concurrency:
   group: refresh-resume
   cancel-in-progress: false
 
-env:
-  DOC_ID: 1-w5zkXB8e-uduhYC_CwVugIfAzwQOuZ2Mluh8SNOHfs
-
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Export the Google Doc as PDF
-        run: |
-          curl -fsSL --retry 3 --retry-delay 5 \
-            "https://docs.google.com/document/d/${DOC_ID}/export?format=pdf" \
-            -o new.pdf
-          # Guard: only continue if we really got a PDF (not a sign-in page)
-          [ "$(head -c 4 new.pdf)" = "%PDF" ] || { echo "Export did not return a PDF. Is the doc shared as 'Anyone with the link'?"; exit 1; }
-          [ "$(stat -c%s new.pdf)" -gt 10000 ] || { echo "PDF is suspiciously small"; exit 1; }
-
-      - name: Detect real content changes
+      - name: Export Google Docs and detect changes
         id: diff
         run: |
           sudo apt-get install -y -qq poppler-utils >/dev/null
-          pdftotext -layout new.pdf new.txt
-          if [ -f resume.pdf ]; then pdftotext -layout resume.pdf old.txt; else : > old.txt; fi
-          if cmp -s new.txt old.txt; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Resume text unchanged, nothing to commit."
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
+          changed=false
+          failed=false
+          while read -r DOC_ID OUT; do
+            [ -z "$DOC_ID" ] && continue
+            echo "== $OUT ($DOC_ID)"
+            if ! curl -fsSL --retry 3 --retry-delay 5 \
+                 "https://docs.google.com/document/d/${DOC_ID}/export?format=pdf" -o new.pdf; then
+              echo "::warning::Could not download $OUT"; failed=true; continue
+            fi
+            # Guard: only continue if we really got a PDF (not a sign-in page)
+            if [ "$(head -c 4 new.pdf)" != "%PDF" ] || [ "$(stat -c%s new.pdf)" -le 10000 ]; then
+              echo "::warning::$OUT export did not return a valid PDF. Is the doc shared as 'Anyone with the link'?"
+              failed=true; continue
+            fi
+            pdftotext -layout new.pdf new.txt
+            if [ -f "$OUT" ]; then pdftotext -layout "$OUT" old.txt; else : > old.txt; fi
+            if cmp -s new.txt old.txt; then
+              echo "$OUT unchanged."
+            else
+              mv new.pdf "$OUT"; changed=true; echo "$OUT updated."
+            fi
+          done <<'LIST'
+          1-w5zkXB8e-uduhYC_CwVugIfAzwQOuZ2Mluh8SNOHfs resume.pdf
+          13cNb-ZqmLaHtooKkFNEF7ab3h4TpgE5hPf6Oua_kMW0 resume-devops.pdf
+          LIST
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
-      - name: Commit updated PDF
+      - name: Commit updated PDFs
         if: steps.diff.outputs.changed == 'true'
         run: |
-          mv new.pdf resume.pdf
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add resume.pdf
-          git commit -m "Refresh resume.pdf from Google Doc"
+          git add resume.pdf resume-devops.pdf
+          git commit -m "Refresh résumé PDFs from Google Docs"
           git push
 
       - name: Trigger a Pages rebuild
@@ -61,3 +70,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages rebuild request skipped"
+
+      - name: Flag export problems
+        if: steps.diff.outputs.failed == 'true'
+        run: |
+          echo "One or more résumé exports failed; see warnings above."
+          exit 1
