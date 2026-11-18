@@ -1,0 +1,49 @@
+name: Refresh project PDFs
+
+# Keeps the project PDFs on the portfolio in sync with their Google Drive
+# documents (listed in docs/sources.txt). Checks every 30 minutes; only
+# converts and commits when a document actually changed.
+on:
+  schedule:
+    - cron: "15,45 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: portfolio-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Convert changed documents to PDF
+        id: docs
+        run: bash scripts/refresh-docs.sh
+
+      - name: Commit updated PDFs
+        if: steps.docs.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git commit -m "Refresh project PDFs from Google Drive"
+          git pull --rebase origin main
+          git push
+
+      - name: Trigger a Pages rebuild
+        if: steps.docs.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages rebuild request skipped"
+
+      - name: Flag download problems
+        if: steps.docs.outputs.failed == 'true'
+        run: |
+          echo "One or more documents could not be refreshed; see warnings above."
+          exit 1

@@ -12,7 +12,7 @@ permissions:
   pages: write
 
 concurrency:
-  group: refresh-resume
+  group: portfolio-refresh
   cancel-in-progress: false
 
 env:
@@ -54,6 +54,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add resume.pdf
           git commit -m "Refresh resume.pdf from Google Doc"
+          git pull --rebase origin main
           git push
 
       - name: Trigger a Pages rebuild

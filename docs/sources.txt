@@ -1,0 +1,9 @@
+# Project documents shown on the portfolio.
+# Each line: <Google Drive file ID>  <name>
+# The PDF is written to docs/<name>.pdf and linked from index.html.
+# Each file must be shared as "Anyone with the link can view".
+# Works for uploaded Word files (.docx) and for native Google Docs.
+# To add a project document, add a line here and link docs/<name>.pdf in index.html.
+
+1tpSA04RRPJouBm3P3p5o9M32TXIzQlaB  platform-assistant-prd
+1Y2kd6P68-r7X0Bmo_AQy4Ha3uSqbX2BH  zomato-hygiene-case-study
