@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shubham Khandelwal — Product &amp; Technology Professional</title>
-<meta name="description" content="Portfolio of Shubham Khandelwal — product and technology professional with 8+ years in airline and fintech technology.">
+<title>Shubham Khandelwal | Product Manager · AI &amp; Platforms</title>
+<meta name="description" content="Shubham Khandelwal: product professional with 8+ years in airline e-commerce and fintech, 6+ onsite in Tokyo. Case studies in AI products, platforms and consumer e-commerce.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shubham Khandelwal | Product Manager · AI &amp; Platforms">
+<meta property="og:description" content="Led an airline e-commerce launch (+20% online bookings). Now building AI products for engineers. Case studies inside.">
+<meta property="og:url" content="https://shubha1096.github.io/portfolio/">
+<meta name="twitter:card" content="summary">
 <style>
   :root{
     --bg:#f6f7fb; --surface:#ffffff; --surface2:#eef0f6; --text:#161a23; --muted:#5b6475;
@@ -115,20 +120,48 @@
   .pm-card:hover{border-color:var(--accent)}
   .pm-card h3{font-size:.98rem;margin-bottom:4px}
   .pm-card p{color:var(--muted);font-size:.88rem;line-height:1.5}
+
+  .cases{display:grid;gap:22px}
+  .case{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;scroll-margin-top:90px}
+  .case .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .case h3{font-size:1.3rem;margin:12px 0 16px}
+  .tldr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  @media(max-width:760px){.tldr{grid-template-columns:1fr;gap:12px}}
+  .tldr .k{display:block;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent2);margin-bottom:4px}
+  .tldr p{color:var(--muted);font-size:.94rem;line-height:1.55}
+  .tldr b{color:var(--text)}
+  .case details{margin-top:14px}
+  .case summary{cursor:pointer;font-weight:700;color:var(--accent);list-style:none;display:inline-flex;align-items:center;gap:8px;padding:6px 0;min-height:44px}
+  .case summary::-webkit-details-marker{display:none}
+  .case summary::after{content:"↓";transition:.2s}
+  .case details[open] summary::after{transform:rotate(180deg)}
+  .cs{max-width:72ch;padding-top:4px}
+  .cs h4{margin-top:18px;font-size:.98rem}
+  .cs p,.cs li{color:var(--muted)}
+  .cs ul,.cs ol{margin:6px 0 0 20px}
+  .cs li{margin-bottom:4px}
+  .chip.real{border-color:var(--accent);color:var(--accent)}
+  .chip.wip{border-color:#d97706;color:#b45309;background:#fffbeb}
+  .step p{color:var(--muted);margin-top:10px}
+  .card h4{font-size:.9rem;margin-top:18px;color:var(--muted)}
+  .tools{margin-top:18px;color:var(--muted);font-size:.92rem}
+  .tools b{color:var(--text)}
+  ul.plain{list-style:none;margin-top:10px;display:grid;gap:8px;color:var(--muted);font-size:.94rem}
+  ul.plain b{color:var(--text)}
+  .contact-row{display:flex;flex-wrap:wrap;gap:12px}
+  .sec-sub b{color:var(--text)}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-
 <nav>
   <div class="wrap">
     <a class="logo" href="#home">SHUBHAM KHANDELWAL</a>
     <div class="links" id="links">
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
+      <a href="#work">Work</a>
       <a href="#journey">Journey</a>
+      <a href="#about">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
       <a class="btn primary" style="padding:8px 16px;color:#fff" href="#contact">Contact</a>
     </div>
     <button class="icon-btn" id="menu" aria-label="Menu">☰</button>
@@ -138,285 +171,253 @@
 <header class="hero" id="home">
   <div class="wrap">
     <div class="badges">
-      <span class="badge open">🟢 Open to product roles</span>
-      <span class="badge">💼 8+ yrs · Airline Ecommerce &amp; Fintech</span>
-      <span class="badge">✅ PSPO-I · AWS Cloud Certified</span>
+      <span class="badge open">Open to Technical / AI / Platform Product Manager roles</span>
+      <span class="badge">8+ yrs · Airline e-commerce &amp; Fintech</span>
+      <span class="badge">6+ yrs onsite with Japanese clients</span>
     </div>
     <div class="hero-grid">
       <div>
         <h1>Hi, I'm <span>Shubham Khandelwal</span></h1>
-        <p class="tagline">Product &amp; Technology Professional — Platforms, APIs &amp; Customer Experience</p>
-        <p class="now"><b>Now:</b> Senior DevOps Engineer, Xoriant (Pune) &nbsp;·&nbsp; <b>Before:</b> Business Analyst, TCS (Tokyo)</p>
-        <p class="lead">I led a 10-member team to build an airline booking platform that grew online bookings 20% in year one, and designed APIs for 40+ microservices. Now I run fintech DevOps platforms and am moving into product management.</p>
+        <p class="tagline">I turn complex technical problems into products people adopt.</p>
+        <p class="now"><b>Now:</b> Platform Owner, CI/CD &amp; DevOps Tooling · Xoriant (Pune) &nbsp;·&nbsp; <b>Before:</b> Senior Business Analyst · TCS (Tokyo)</p>
+        <p class="lead">I led a 10-member team that took an airline e-commerce product from requirements to launch, and online bookings grew 20% in its first year. Today I own the CI/CD platform used by 100+ fintech developers, and I'm building AI products for engineers.</p>
         <div class="cta">
-          <a class="btn primary" href="mailto:khandelwalshubham1996@gmail.com">✉ Email me</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">📄 View resume</a>
-          <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn primary" href="#work">See my work ↓</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+          <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
       <div class="avatar" aria-hidden="true">SK</div>
     </div>
     <div class="stats">
-      <div class="stat"><b>6+</b><span>Years delivering onsite from Tokyo, working side by side with the business</span></div>
-      <div class="stat"><b>40+</b><span>Microservice APIs designed</span></div>
-      <div class="stat"><b>+20%</b><span>Online bookings in year one</span></div>
-      <div class="stat"><b>12</b><span>Production releases shipped on schedule</span></div>
-    </div>
-
-    <h2 class="pm-title">PM competencies, backed by evidence</h2>
-    <div class="pm-grid">
-      <div class="pm-card"><h3>🔍 Discovery</h3><p>Ran workshops with 10+ stakeholders and turned them into BRDs, user stories and wireframes.</p></div>
-      <div class="pm-card"><h3>🎯 Prioritisation</h3><p>Ranked features by business value vs delivery effort for the booking and post-booking platform.</p></div>
-      <div class="pm-card"><h3>🚀 Delivery</h3><p>35+ sprints, 12 on-time releases, ~80% sprint completion across dev and QA teams.</p></div>
-      <div class="pm-card"><h3>🧩 Platform thinking</h3><p>Reusable REST/SOAP contracts across 40+ microservices drove 20% API reuse.</p></div>
-      <div class="pm-card"><h3>📈 Outcomes &amp; metrics</h3><p>+20% bookings, ~70% fewer downtime incidents, 60% faster patch cycles.</p></div>
-      <div class="pm-card"><h3>🤝 Leadership</h3><p>Led a 10-member team, and a CI/CD migration aligning 5+ teams on one roadmap.</p></div>
+      <div class="stat"><b>+20%</b><span>online bookings in the first year after launch</span></div>
+      <div class="stat"><b>100+</b><span>developers adopted the new CI/CD platform in 2 months</span></div>
+      <div class="stat"><b>~70%</b><span>fewer weekly tool outages for 6 fintech teams</span></div>
+      <div class="stat"><b>6+ yrs</b><span>onsite in Tokyo, working side by side with the client</span></div>
     </div>
   </div>
 </header>
 
-<section id="experience">
+<section id="work">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">01</span><h2>Experience</h2></div>
-    <p class="sec-sub">8+ years across airline and fintech technology, from requirements and API design in Tokyo to running DevOps platforms at scale.</p>
-    <div class="timeline">
+    <div class="sec-head"><span class="num">01</span><h2>Work</h2></div>
+    <p class="sec-sub">Four projects: two from my jobs and two I'm building on my AI product management journey. Each starts with a 30-second summary. Open it for the full story.</p>
 
-      <div class="tl-item card">
-        <span class="date">Dec 2024 – Present</span>
-        <h3>Senior DevOps Engineer</h3>
-        <p class="meta">Xoriant Solutions Pvt. Ltd. · Pune, MH</p>
-        <ul>
-          <li>Administer 8+ enterprise DevOps tools and manage Docker-based deployments of 50+ microservices on AWS.</li>
-          <li>Resolved 200+ incidents through root cause analysis, cutting weekly tool downtime incidents by ~70%.</li>
-          <li>Automated upgrades and patching with Jenkins pipelines, cutting patch cycle time by 60% and removing planned downtime for 100+ developers.</li>
-          <li>Led the Jenkins OSS to CloudBees CI migration across 5+ teams, creating a standardised CI/CD platform for 30+ pipelines.</li>
-          <li>Defined a RAG-based Platform Assistant to cut 2–3 hour incident investigations, with success metrics for investigation time, answer accuracy and adoption.</li>
-        </ul>
-        <div class="chips"><span class="chip">50+ microservices</span><span class="chip">-70% downtime incidents</span><span class="chip">-60% patch cycle</span><span class="chip">30+ pipelines</span></div>
-      </div>
+    <div class="cases">
 
-      <div class="tl-item card">
-        <span class="date">Oct 2019 – Nov 2024</span>
-        <h3>Business Analyst</h3>
-        <p class="meta">Tata Consultancy Services · Tokyo, Japan</p>
-        <ul>
-          <li>Led a 10-member team to deliver an airline e-commerce web and mobile application for domestic markets, owning requirements, scope and releases end to end. Online bookings grew 20% in year one.</li>
-          <li>Ran requirements workshops with 10+ business stakeholders, prioritised features by business value and delivery effort, and turned them into BRDs, user stories and wireframes.</li>
-          <li>Designed API specifications and architecture for 40+ microservices across reservation systems and third parties, with reusable REST/SOAP contracts that drove 20% API reuse.</li>
-          <li>Managed backlog grooming and sprint planning across 35+ sprints, delivering 12 production releases on schedule at ~80% sprint completion.</li>
-        </ul>
-        <div class="chips"><span class="chip">+20% bookings</span><span class="chip">40+ microservices</span><span class="chip">35+ sprints</span><span class="chip">12 releases</span></div>
-      </div>
-
-      <div class="tl-item card">
-        <span class="date">Oct 2018 – Sep 2019</span>
-        <h3>QA Analyst</h3>
-        <p class="meta">Tata Consultancy Services · Tokyo, Japan</p>
-        <ul>
-          <li>Contributed to the Self Bag Drop rollout for Japan Airlines' domestic market, conducting on-site passenger interviews to identify usability issues and coordinating with cross-functional teams to resolve them.</li>
-          <li>Validated change requests across Altea DCS modules and supported IATCI testing and coordination with partner airlines.</li>
-        </ul>
-        <div class="chips"><span class="chip">Self Bag Drop</span><span class="chip">Japan Airlines</span><span class="chip">Altea DCS</span><span class="chip">IATCI</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">02</span><h2>Projects</h2></div>
-    <p class="sec-sub">Product case studies and concepts that show how I research, prioritise and define products.</p>
-    <div class="grid2">
-      <div class="card">
-        <span class="chip">Case study</span>
-        <h3 style="margin-top:12px">Zomato: Hygiene Trust for Working Professionals</h3>
-        <p class="meta">User research · RICE prioritisation · Prototype · Metrics</p>
-        <p>Surveyed 31 users and interviewed 2 to understand why working professionals hesitate to order restaurant food. 90% cited hygiene as a concern, and 52% picked reliable hygiene information as the top improvement. Prioritised 7 ideas with RICE and prototyped a Verified Hygiene Score and Hygiene Review Summary, with a key metric, secondary metric and guardrail.</p>
-        <div class="chips"><span class="chip">31-user survey</span><span class="chip">90% hygiene concern</span><span class="chip">RICE</span></div>
-        <p class="meta" style="margin-top:14px">Case study link coming soon</p>
-      </div>
-      <div class="card">
-        <span class="chip">Product concept · PRD</span>
-        <h3 style="margin-top:12px">Platform Knowledge Assistant</h3>
-        <p class="meta">PRD · RAG architecture · Evaluation · AI guardrails</p>
-        <p>Authored a PRD for an AI assistant that unifies Jira, ServiceNow, Confluence and vendor documentation for platform engineers in regulated financial services, who lose an estimated 3–4 hours a week searching for answers. Specified the RAG architecture, failure modes, evaluation set, success metrics and guardrails such as source citations, access control and no credential exposure.</p>
-        <div class="chips"><span class="chip">AI product</span><span class="chip">RAG</span><span class="chip">Evaluation set</span></div>
-        <p class="meta" style="margin-top:14px">PRD link coming soon</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">03</span><h2>Skills &amp; certifications</h2></div>
-    <p class="sec-sub">The product, technical and analytical toolkit I work with.</p>
-    <div class="grid2">
-      <div class="card">
-        <h3>Product</h3>
-        <div class="chips">
-          <span class="chip">Product Roadmap</span><span class="chip">Feature Prioritization</span><span class="chip">Product Metrics</span><span class="chip">User Segmentation</span><span class="chip">User Empathy</span><span class="chip">Competitor Analysis</span><span class="chip">Product Ideation</span><span class="chip">Wireframing</span><span class="chip">UI/UX Design</span><span class="chip">A/B Testing</span><span class="chip">Agile Methodologies</span><span class="chip">Project Management</span>
+      <article class="case" id="airline-ecommerce">
+        <div class="tags"><span class="chip real">Shipped · Real users</span><span class="chip">Consumer e-commerce</span><span class="chip">Japan Airlines</span></div>
+        <h3>Launching an airline e-commerce platform</h3>
+        <div class="tldr">
+          <div><span class="k">Problem</span><p>Japan Airlines needed web and mobile booking apps for its domestic market, covering booking and everything after it.</p></div>
+          <div><span class="k">My role</span><p>Led a 10-member BA team onsite in Tokyo, owning requirements, scope and releases end to end.</p></div>
+          <div><span class="k">Outcome</span><p><b>+20% online bookings</b> in year one; 12 releases shipped on schedule.</p></div>
         </div>
-      </div>
-      <div class="card">
-        <h3>Analytics</h3>
-        <div class="chips">
-          <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Excel</span><span class="chip">Spreadsheets</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Google Analytics</span><span class="chip">Mixpanel</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Tools</h3>
-        <div class="chips">
-          <span class="chip">Jira</span><span class="chip">Confluence</span><span class="chip">ServiceNow</span><span class="chip">Postman</span><span class="chip">SoapUI</span><span class="chip">Bitbucket</span><span class="chip">Jenkins</span><span class="chip">Atlassian Bamboo</span><span class="chip">Sonatype Nexus</span><span class="chip">Zephyr</span><span class="chip">Dynatrace</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Certifications</h3>
-        <div class="chips">
-          <span class="chip">PSPO-I</span><span class="chip">Product Management · HelloPM</span><span class="chip">AWS Certified Solutions Architect – Associate</span><span class="chip">HashiCorp Terraform Associate</span><span class="chip">Anthropic AI Practitioner</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <details>
+          <summary>Read the full case study</summary>
+          <div class="cs">
+            <h4>Discovery</h4>
+            <p>Ran requirements workshops with 10+ business stakeholders and turned what I heard into BRDs, user stories and wireframes for the booking and post-booking journeys.</p>
+            <h4>Prioritisation</h4>
+            <p>Ranked features by business value against delivery effort, so each release carried the changes that mattered most to customers and the business.</p>
+            <h4>Platform decisions</h4>
+            <p>Designed API specifications for 40+ microservices across reservation systems and third-party services. Reusable REST/SOAP contracts drove 20% API reuse and cut duplicate integration work for the engineering teams.</p>
+            <h4>Delivery</h4>
+            <p>Ran backlog grooming and sprint planning with development and QA teams across 35+ sprints and delivered 12 production releases on schedule. The whole team was there for the 2 a.m. go-live in 2024.</p>
+            <h4>Result</h4>
+            <p>Online bookings grew 20% in the first year after launch.</p>
+            <h4>What I learned</h4>
+            <p>How to own an outcome, not just a task list, while working across languages, cultures and a large group of stakeholders.</p>
+          </div>
+        </details>
+      </article>
 
-<section id="education">
-  <div class="wrap reveal">
-    <div class="sec-head"><span class="num">04</span><h2>Education</h2></div>
-    <p class="sec-sub">Where I studied and what I focused on.</p>
-    <div class="grid2">
-      <div class="card">
-        <h3>Certification in Product Management</h3>
-        <p class="meta">HelloPM · Delhi</p>
-        <p>Structured programme covering product discovery, roadmapping, metrics, prioritisation and stakeholder management. This portfolio is part of the coursework.</p>
-      </div>
-      <div class="card">
-        <h3>Bachelor of Engineering, Mechanical</h3>
-        <p class="meta">North Maharashtra University · 2015 – 2018</p>
-        <p>Engineering fundamentals and structured problem-solving that I now apply to software, platforms and product decisions.</p>
-      </div>
+      <article class="case" id="platform-assistant">
+        <div class="tags"><span class="chip">AI product · PRD</span><span class="chip real">Selected in Xoriant ideathon</span></div>
+        <h3>RAG-Based Platform Assistant</h3>
+        <div class="tldr">
+          <div><span class="k">Problem</span><p>Platform engineers lose an estimated 3–4 hours a week searching across Jira, ServiceNow, Confluence and vendor docs; incident investigations take 2–3 hours.</p></div>
+          <div><span class="k">My role</span><p>Spotted the problem in my own team and wrote the PRD for an AI assistant to solve it.</p></div>
+          <div><span class="k">Outcome</span><p>PRD complete; <b>selected in the company ideathon</b>.</p></div>
+        </div>
+        <details>
+          <summary>Read the full case study</summary>
+          <div class="cs">
+            <h4>Who it's for</h4>
+            <p>Platform engineers in regulated financial services who handle incidents and support requests and need answers that are spread across four different systems.</p>
+            <h4>The idea</h4>
+            <p>One assistant that searches Jira, ServiceNow, Confluence and vendor documentation together and answers with sources, using retrieval-augmented generation (RAG).</p>
+            <h4>What the PRD covers</h4>
+            <ul>
+              <li>The RAG architecture and the knowledge sources it connects</li>
+              <li>An evaluation set of real questions to measure answer quality before launch</li>
+              <li>Success metrics: investigation time, answer accuracy and adoption</li>
+              <li>Guardrails suited to a regulated environment</li>
+            </ul>
+            <h4>Why it matters</h4>
+            <p>Every hour an engineer spends searching is an hour not spent fixing. Cutting a 2–3 hour investigation shortens incidents for every team that depends on the platform.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="case" id="infratrace">
+        <div class="tags"><span class="chip wip">In progress · Buildathon</span><span class="chip">AI product · MVP</span></div>
+        <h3>InfraTrace</h3>
+        <div class="tldr">
+          <div><span class="k">Problem</span><p>When an incident is fixed, the knowledge stays with the engineer who fixed it. The next person to hit the same issue has to track that engineer down.</p></div>
+          <div><span class="k">My role</span><p>Building the MVP as my buildathon project in an AI product management cohort.</p></div>
+          <div><span class="k">Status</span><p>MVP in progress.</p></div>
+        </div>
+        <details>
+          <summary>Read more</summary>
+          <div class="cs">
+            <h4>What it does</h4>
+            <ol>
+              <li>Records the commands and infrastructure changes an engineer makes during a fix.</li>
+              <li>Links them to the matching ServiceNow or Jira ticket.</li>
+              <li>Writes a reproducible resolution note automatically when the ticket closes.</li>
+            </ol>
+            <h4>Why I'm building it</h4>
+            <p>After running root cause analysis on 200+ incidents, I kept seeing the same fixes rediscovered from scratch. InfraTrace captures the fix while it happens, so the next engineer doesn't have to chase the first one.</p>
+            <p class="meta">I'll share the MVP and what I learned here once it's ready.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="case" id="zomato">
+        <div class="tags"><span class="chip">Case study</span><span class="chip">Consumer · User research</span></div>
+        <h3>Zomato: hygiene trust for working professionals</h3>
+        <div class="tldr">
+          <div><span class="k">Problem</span><p>Working professionals hesitate to order from restaurants they don't know. Why?</p></div>
+          <div><span class="k">My role</span><p>Solo case study: research, prioritisation and prototype.</p></div>
+          <div><span class="k">Outcome</span><p>Found hygiene uncertainty is the <b>top barrier (90%)</b>; prototyped a Verified Hygiene Score.</p></div>
+        </div>
+        <details>
+          <summary>Read the full case study</summary>
+          <div class="cs">
+            <h4>Research</h4>
+            <p>Surveyed 31 working professionals and interviewed 2. 90% said hygiene was a concern when ordering, and 52% picked reliable hygiene information as the improvement they wanted most.</p>
+            <h4>Prioritisation</h4>
+            <p>Generated 7 solution ideas and scored them with RICE (reach, impact, confidence, effort).</p>
+            <h4>Solution</h4>
+            <ul>
+              <li><b>Verified Hygiene Score</b> shown on each restaurant</li>
+              <li><b>Hygiene Review Summary</b> that pulls hygiene mentions out of customer reviews</li>
+            </ul>
+            <h4>Measuring success</h4>
+            <p>Defined success metrics for the prototype so the idea could be tested, not just shipped.</p>
+          </div>
+        </details>
+      </article>
+
     </div>
   </div>
 </section>
 
 <section id="journey">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">05</span><h2>My journey</h2></div>
-    <p class="sec-sub">From a mechanical engineering graduate to a QA analyst and then business analyst in Tokyo, then into platforms and product, and what I achieved at every stage.</p>
-
+    <div class="sec-head"><span class="num">02</span><h2>How I got here</h2></div>
+    <p class="sec-sub">From mechanical engineering to delivering airline products onsite in Tokyo, then platforms, and now product. Each move taught me something I use as a PM.</p>
     <div class="journey">
 
       <div class="step">
         <div class="dot">1</div>
-        <span class="stage">Stage 1 · Learn</span>
-        <h3>Engineering foundations</h3>
-        <span class="when">2015 – 2018 · North Maharashtra University</span>
-        <ul>
-          <li>Completed a Bachelor of Engineering in Mechanical, building a structured, analytical approach to problem-solving.</li>
-          <li>Chose to take that mindset into technology and business.</li>
-        </ul>
-        <div class="win"><b>Achievement:</b> Graduated and started a career in IT consulting with Tata Consultancy Services.</div>
+        <span class="stage">Start · ILP → Chennai → Pune</span>
+        <h3>Learning software from scratch</h3>
+        <span class="when">2018 · TCS</span>
+        <p>Joined TCS after a mechanical engineering degree, learned software through its Initial Learning Program (ILP), then worked in Chennai and Pune before moving onsite to Tokyo.</p>
+        <div class="win"><b>What it taught me:</b> I can pick up a new field fast.</div>
       </div>
 
       <div class="step">
         <div class="dot">2</div>
-        <span class="stage">Stage 2 · Start</span>
-        <h3>QA Analyst in Tokyo</h3>
-        <span class="when">Oct 2018 – Sep 2019 · Tokyo, Japan</span>
-        <ul>
-          <li>Contributed to the Self Bag Drop rollout for Japan Airlines' domestic market, interviewing passengers on-site to find usability issues and coordinating fixes with cross-functional teams.</li>
-          <li>Validated change requests across Altea DCS modules and supported IATCI testing with partner airlines.</li>
-        </ul>
-        <figure class="shot"><img src="images/journey-2018-self-bag-drop.svg" alt="Self Bag Drop commissioning in 2018" loading="lazy" width="1200" height="800"><figcaption>2018 · Self Bag Drop commissioning at Tokyo Haneda Airport</figcaption></figure>
-        <div class="win"><b>Achievement:</b> Self Bag Drop commissioned at Tokyo Haneda Airport, and a first-hand view of how passengers use airline products.</div>
+        <span class="stage">Tokyo · Project 1</span>
+        <h3>Self Bag Drop for Japan Airlines</h3>
+        <span class="when">2018 – 2019 · QA Analyst, onsite at the client</span>
+        <p>Interviewed passengers at the airport to find usability problems in the new Self Bag Drop and worked with cross-functional teams to fix them. Bag check-in time dropped to 40 seconds.</p>
+        <div class="win"><b>What it taught me:</b> Watching real users beats any spec.</div>
       </div>
 
       <div class="step">
         <div class="dot">3</div>
-        <span class="stage">Stage 3 · Lead</span>
-        <h3>Business Analyst: led the airline e-commerce build</h3>
-        <span class="when">Oct 2019 – Nov 2024 · Tokyo, Japan</span>
-        <ul>
-          <li>Ran requirements workshops with 10+ business stakeholders and turned them into BRDs, user stories and wireframes.</li>
-          <li>Led a 10-member team, owning requirements, scope and releases end to end.</li>
-          <li>Prioritised features by business value and delivery effort.</li>
-        </ul>
-        <figure class="shot"><img src="images/journey-2024-ecommerce-go-live.svg" alt="The e-commerce project team at the 2 a.m. go-live in 2024" loading="lazy" width="1200" height="800"><figcaption>2024 · The whole team at the e-commerce go-live, 2 a.m.</figcaption></figure>
-        <div class="win"><b>Achievement:</b> Online bookings grew 20% in the first year after launch.</div>
+        <span class="stage">Tokyo · Project 2</span>
+        <h3>Leading the airline e-commerce launch</h3>
+        <span class="when">2019 – 2024 · Senior Business Analyst, onsite at the client</span>
+        <p>Led a 10-member team from requirements to launch. Online bookings grew 20% in year one. <a href="#airline-ecommerce">Read the case study ↑</a></p>
+        <div class="win"><b>What it taught me:</b> How to own an outcome, end to end.</div>
       </div>
 
       <div class="step">
         <div class="dot">4</div>
-        <span class="stage">Stage 4 · Scale</span>
-        <h3>APIs, sprints and releases</h3>
-        <span class="when">Through Nov 2024 · Tokyo, Japan</span>
-        <ul>
-          <li>Designed API specifications and architecture for 40+ microservices across reservation systems and third-party services.</li>
-          <li>Managed backlog grooming and sprint planning across 35+ sprints with development and QA teams.</li>
-        </ul>
-        <div class="win"><b>Achievement:</b> Delivered 12 production releases on schedule and drove 20% API reuse.</div>
-      </div>
-
-      <div class="step">
-        <div class="dot">5</div>
-        <span class="stage">Stage 5 · Pivot</span>
-        <h3>Platforms, fintech and a product mindset</h3>
-        <span class="when">Dec 2024 – Present · Pune</span>
-        <ul>
-          <li>Moved to Xoriant as a Senior DevOps Engineer, supporting fintech applications and 100+ developers.</li>
-          <li>Took the HelloPM product management certification and earned PSPO-I, AWS and Terraform certifications.</li>
-          <li>Joined the World Bank-funded RAMP programme's State Project Implementation Unit as a passion project.</li>
-          <li>Received the Star Team Member award from the director in 2025.</li>
-        </ul>
-        <figure class="shot"><img src="images/journey-2025-star-team-award.svg" alt="Receiving the Star Team Member award from the director in 2025" loading="lazy" width="1200" height="800"><figcaption>2025 · Star Team Member award from the director</figcaption></figure>
-        <div class="win"><b>Achievement:</b> Led the CloudBees CI migration across 5+ teams and cut patch cycle time by 60%.</div>
+        <span class="stage">Switch · Platforms in Pune</span>
+        <h3>Running an internal platform like a product</h3>
+        <span class="when">Dec 2024 – Present · Platform Owner, Xoriant</span>
+        <p>Learned DevOps (AWS Solutions Architect in 2023, Terraform in 2024) and moved to Pune to own the CI/CD platform for 6 fintech teams. Led the migration to CloudBees CI, with 100+ developers adopting it in 2 months, and cut weekly tool outages by ~70%. Received the Star Team Member award in 2025. Alongside, I joined the World Bank-funded RAMP programme's State Project Implementation Unit as a passion project.</p>
+        <div class="win"><b>What it taught me:</b> Internal tools are products too. Adoption depends on onboarding and trust.</div>
       </div>
 
       <div class="step pm">
         <div class="dot">★</div>
-        <span class="stage">Stage 6 · Next</span>
-        <h3>Growing into Product Management</h3>
+        <span class="stage">Next · Product</span>
+        <h3>Why product, why AI, why now</h3>
         <span class="when">Now</span>
-        <ul>
-          <li>Treating internal platforms as products: defining problems, success metrics and adoption goals, as with the RAG-based Platform Assistant.</li>
-          <li>Looking for product roles where I can combine business analysis, technical depth and customer focus.</li>
-        </ul>
-        <div class="win"><b>Goal:</b> Own a product roadmap and drive outcomes for customers and the business.</div>
+        <p>Every stage pulled me closer to product: watching passengers at the airport, owning a launch, getting 100+ developers to adopt a new platform. In my current role I see engineers lose hours to problems AI can now solve, so I'm building those products (the Platform Assistant and InfraTrace) and looking for a Technical, AI or Platform PM role to do it full-time.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="num">03</span><h2>About</h2></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Product</h3>
+        <div class="chips"><span class="chip">PRD writing</span><span class="chip">Discovery &amp; user research</span><span class="chip">Prioritisation (RICE)</span><span class="chip">Product metrics</span><span class="chip">Backlog management</span><span class="chip">Stakeholder management</span><span class="chip">Requirements gathering</span><span class="chip">Wireframing</span><span class="chip">Competitor analysis</span><span class="chip">Agile / Scrum</span></div>
+        <h4>AI</h4>
+        <div class="chips"><span class="chip">RAG</span><span class="chip">AI evaluation sets</span><span class="chip">AI guardrails</span></div>
+        <h4>Analytics</h4>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Spreadsheets</span><span class="chip">Google Analytics</span><span class="chip">Mixpanel</span></div>
+        <p class="tools"><b>Tools:</b> Jira, Confluence, ServiceNow, Postman, REST/SOAP APIs, AWS, Docker</p>
+      </div>
+      <div class="card">
+        <h3>Certifications</h3>
+        <ul class="plain">
+          <li><b>AI Product Management</b> · HelloPM</li>
+          <li><b>Professional Scrum Product Owner (PSPO-I)</b></li>
+          <li><b>Anthropic AI Practitioner</b></li>
+          <li><b>AWS Certified Solutions Architect – Associate</b> · 2023</li>
+          <li><b>HashiCorp Certified: Terraform Associate</b> · 2024</li>
+        </ul>
+        <h3 style="margin-top:22px">Education</h3>
+        <ul class="plain">
+          <li><b>Bachelor of Engineering, Mechanical</b> · North Maharashtra University · 2015 – 2018</li>
+        </ul>
+        <h3 style="margin-top:22px">Recognition</h3>
+        <ul class="plain">
+          <li><b>Star Team Member award</b> · Xoriant · 2025</li>
+          <li><b>Ideathon selection</b> · RAG-Based Platform Assistant</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap reveal">
-    <div class="sec-head"><span class="num">06</span><h2>Get in touch</h2></div>
-    <p class="sec-sub">Open to product conversations, hiring discussions and collaborations.</p>
-    <div class="contact-grid">
-      <div class="card">
-        <h3>Find me online</h3>
-        <div class="contact-list">
-          <a href="mailto:khandelwalshubham1996@gmail.com">✉ khandelwalshubham1996@gmail.com</a>
-          <a href="tel:+918087286475">📞 +91 80872 86475</a>
-          <a href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">🔗 linkedin.com/in/srk10</a>
-          <a href="https://github.com/Shubha1096" target="_blank" rel="noopener">💻 github.com/Shubha1096</a>
-        </div>
-      </div>
-      <div class="card">
-        <!-- Opens the visitor's email app. Swap for Formspree/Web3Forms later for direct submissions. -->
-        <form id="form">
-          <div><label for="name">Name</label><input id="name" required></div>
-          <div><label for="email">Email</label><input id="email" type="email" required></div>
-          <div><label for="msg">Message</label><textarea id="msg" required></textarea></div>
-          <button class="btn primary" type="submit">Send message</button>
-        </form>
-      </div>
+    <div class="sec-head"><span class="num">04</span><h2>Let's talk</h2></div>
+    <p class="sec-sub"><b>Looking for:</b> Technical, AI or Platform Product Manager roles. Happy to chat about the work above, or product in general.</p>
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:khandelwalshubham1996@gmail.com">✉ khandelwalshubham1996@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/srk10/" target="_blank" rel="noopener">LinkedIn · in/srk10</a>
+      <a class="btn" href="tel:+918087286475">+91 80872 86475</a>
+      <a class="btn" href="https://github.com/Shubha1096" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>
 
-<footer>© <span id="yr"></span> Shubham Khandelwal. Built with HTML, CSS &amp; a little JavaScript.</footer>
+<footer>© <span id="yr"></span> Shubham Khandelwal</footer>
 <a id="top" class="btn" href="#home" aria-label="Back to top">↑</a>
 
 <script>
@@ -425,8 +426,17 @@
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));}
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  else{
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.05});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
+
+  // Deep links from the CV (e.g. #zomato) open that case study
+  function openFromHash(){
+    const el=location.hash&&document.querySelector(location.hash);
+    if(el&&el.classList.contains('case')){const d=el.querySelector('details');if(d)d.open=true;el.closest('.reveal')?.classList.add('in');}
+  }
+  openFromHash();addEventListener('hashchange',openFromHash);
 
   const secs=[...document.querySelectorAll('section[id]')];
   const navLinks=[...links.querySelectorAll('a')];
@@ -435,12 +445,6 @@
     topBtn.classList.toggle('show',scrollY>600);
     let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id;});
     navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
-  });
-
-  document.getElementById('form').addEventListener('submit',e=>{
-    e.preventDefault();
-    const n=document.getElementById('name').value,em=document.getElementById('email').value,m=document.getElementById('msg').value;
-    location.href='mailto:khandelwalshubham1996@gmail.com?subject='+encodeURIComponent('Portfolio enquiry from '+n)+'&body='+encodeURIComponent(m+'\n\n— '+n+' ('+em+')');
   });
 
   document.getElementById('yr').textContent=new Date().getFullYear();
