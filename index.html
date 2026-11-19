@@ -587,8 +587,9 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-si
 
 // ---- Analytics: named events for the actions that matter ----
 {
-  const noop=()=>{};
-  const ph=window.posthog||{capture:noop,register:noop,register_once:noop,opt_out_capturing:noop,opt_in_capturing:noop};
+  // Always call the live SDK: window.posthog is a placeholder until the SDK loads, then gets replaced
+  const call=m=>(...a)=>{const p=window.posthog;if(p&&typeof p[m]==='function')p[m](...a);};
+  const ph={capture:call('capture'),register:call('register'),register_once:call('register_once'),opt_out_capturing:call('opt_out_capturing'),opt_in_capturing:call('opt_in_capturing')};
   const params=new URLSearchParams(location.search);
 
   // Exclude the owner's own visits: open the site once with ?notrack=1 (undo with ?notrack=0)
