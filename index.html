@@ -10,6 +10,35 @@
 <meta property="og:description" content="Led an airline e-commerce launch (+20% online bookings). Now building AI products for engineers. Case studies inside.">
 <meta property="og:url" content="https://shubha1096.github.io/portfolio/">
 <meta name="twitter:card" content="summary">
+<!-- PostHog analytics (EU cloud). Visit with ?notrack=1 once to exclude your own browser; ?notrack=0 to undo. -->
+<script>
+!function(w,d){
+  var ph=w.posthog=w.posthog||[];
+  if(ph.__SV||ph.__loaded) return;
+  ph._i=[];
+  ph.init=function(token,cfg,name){
+    var s=d.createElement('script');
+    s.type='text/javascript';s.async=true;s.crossOrigin='anonymous';
+    s.src=cfg.api_host.replace('.i.posthog.com','-assets.i.posthog.com')+'/static/array.js';
+    (d.head||d.documentElement).appendChild(s);
+    'capture register register_once unregister identify reset opt_in_capturing opt_out_capturing has_opted_out_capturing startSessionRecording stopSessionRecording'.split(' ').forEach(function(m){
+      ph[m]=function(){ph.push([m].concat(Array.prototype.slice.call(arguments)))};
+    });
+    ph._i.push([token,cfg,name]);
+  };
+  ph.__SV=1;
+}(window,document);
+posthog.init('phc_yf4DiJy5rj4stK4SwN36p5tfyYPc7DRcouR4Gb8M8YZH',{
+  api_host:'https://eu.i.posthog.com',
+  ui_host:'https://eu.posthog.com',
+  defaults:'2026-08-30',
+  person_profiles:'identified_only',
+  capture_pageleave:true,
+  capture_dead_clicks:true,
+  capture_heatmaps:true,
+  session_recording:{maskAllInputs:true}
+});
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -528,7 +557,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-si
   </div>
 </section>
 
-<footer><div class="wrap">© <span id="yr">2026</span> Shubham Khandelwal</div></footer>
+<footer><div class="wrap">© <span id="yr">2026</span> Shubham Khandelwal · This site uses <a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a> analytics with IP addresses anonymised, to learn which parts are useful.</div></footer>
 
 <script>
 {
@@ -554,6 +583,77 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-si
   addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
   document.getElementById('yr').textContent=new Date().getFullYear();
+}
+
+// ---- Analytics: named events for the actions that matter ----
+{
+  const noop=()=>{};
+  const ph=window.posthog||{capture:noop,register:noop,register_once:noop,opt_out_capturing:noop,opt_in_capturing:noop};
+  const params=new URLSearchParams(location.search);
+
+  // Exclude the owner's own visits: open the site once with ?notrack=1 (undo with ?notrack=0)
+  if(params.get('notrack')==='1') ph.opt_out_capturing();
+  if(params.get('notrack')==='0') ph.opt_in_capturing();
+
+  // Where did the visitor come from? ?src=cv / linkedin / <company> (utm_source also works)
+  const src=params.get('src')||params.get('utm_source');
+  if(src){ ph.register({src}); ph.register_once({first_src:src}); }
+  ph.register({site_version:'2026-11-editorial'});
+
+  const where=el=>{const s=el.closest('section[id],header[id],nav,footer');return s?(s.id||s.tagName.toLowerCase()):'page'};
+  const caseOf=el=>{const c=el.closest('.case');return c?c.id:null};
+  const once=new Set();
+  const track=(event,props,key)=>{if(key){if(once.has(key))return;once.add(key);} ph.capture(event,props||{});};
+
+  // Arrived through a deep link from the CV (e.g. #zomato)
+  if(location.hash) track('deep_link_landed',{target:location.hash.slice(1)});
+
+  // Section reach: how far down the page people get
+  const secObs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){const id=e.target.id||'home';track('section_viewed',{section:id},'sec:'+id);}
+  }),{threshold:0,rootMargin:'0px 0px -50% 0px'});
+  document.querySelectorAll('header.hero,section[id]').forEach(s=>secObs.observe(s));
+
+  // Case study seen on screen (at least half visible)
+  const caseObs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting)track('case_study_viewed',{project:e.target.id},'case:'+e.target.id);
+  }),{threshold:.5});
+  document.querySelectorAll('.case').forEach(c=>caseObs.observe(c));
+
+  // Case study opened ("Read the full case study")
+  document.querySelectorAll('.case details').forEach(d=>d.addEventListener('toggle',()=>{
+    if(d.open)track('case_study_expanded',{project:caseOf(d)});
+  }));
+
+  // Scroll depth milestones
+  const marks=[25,50,75,100];
+  addEventListener('scroll',()=>{
+    const h=document.documentElement, pct=Math.round((scrollY+innerHeight)/h.scrollHeight*100);
+    marks.forEach(m=>{if(pct>=m)track('scroll_milestone',{percent:m},'scroll:'+m);});
+  },{passive:true});
+
+  // Clicks on links that matter
+  document.addEventListener('click',ev=>{
+    const a=ev.target.closest('a'); if(!a) return;
+    const href=a.getAttribute('href')||'', loc=where(a);
+    if(/\.pdf($|\?)/i.test(href)){
+      const doc=/resume/i.test(href)?'resume':/prd/i.test(href)?'prd':'case_study_pdf';
+      track('document_opened',{doc,project:caseOf(a),location:loc,file:href.split('/').pop()});
+    } else if(a.classList.contains('deck')){
+      track('document_opened',{doc:'deck',project:caseOf(a),location:loc});
+    } else if(href.startsWith('mailto:')){
+      track('contact_clicked',{channel:'email',location:loc});
+    } else if(/linkedin\.com/i.test(href)){
+      track('contact_clicked',{channel:'linkedin',location:loc});
+    } else if(a.classList.contains('thumb')){
+      track('photo_opened',{photo:href.split('/').pop()});
+    } else if(href.startsWith('#')){
+      track(loc==='nav'?'nav_clicked':'cta_clicked',{target:href.slice(1),label:a.textContent.trim().slice(0,60),location:loc});
+    } else if(/^https?:/i.test(href)){
+      const label=/press\.jal|translate\.google/.test(href)?'jal_press_release':/passengerterminaltoday/.test(href)?'press_coverage':a.textContent.trim().slice(0,60);
+      track('proof_link_clicked',{label,host:new URL(href).host,location:loc});
+    }
+  },true);
 }
 </script>
 </body>
